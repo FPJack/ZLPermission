@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - ZLPermission (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - ZLPermission (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  ZLPermission:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  ZLPermission: 09071a1e51f19421971058bba577ae78d1b4abe1
+
+PODFILE CHECKSUM: aad86c2bd1400847360d5f93da26bfecba3b6ccc
+
+COCOAPODS: 1.16.2

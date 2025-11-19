@@ -1,0 +1,6 @@
+framework module ZLPermission {
+  umbrella header "ZLPermission-umbrella.h"
+
+  export *
+  module * { export * }
+}
