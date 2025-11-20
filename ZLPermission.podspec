@@ -49,6 +49,13 @@ TODO: Add long description of the pod here.
   s.subspec 'bluetooth' do |core|
      core.source_files = 'ZLPermission/Classes/bluetooth/**/*'
    end
+  s.subspec 'calendar' do |core|
+     core.source_files = 'ZLPermission/Classes/calendar/**/*'
+   end
+  s.subspec 'reminders' do |core|
+     core.source_files = 'ZLPermission/Classes/reminders/**/*'
+   end
+  
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']
   # }

@@ -42,6 +42,14 @@
     {
       "name": "bluetooth",
       "source_files": "ZLPermission/Classes/bluetooth/**/*"
+    },
+    {
+      "name": "calendar",
+      "source_files": "ZLPermission/Classes/calendar/**/*"
+    },
+    {
+      "name": "reminders",
+      "source_files": "ZLPermission/Classes/reminders/**/*"
     }
   ]
 }

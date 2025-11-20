@@ -7,147 +7,155 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C5C657E0038EB028541D0E7832EFE6 /* ZLPermissionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E29E22C24C6D4102F6AE3385B7D3790 /* ZLPermissionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE1FFAA4390B36294D9A3C1E9A2D181 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC96F34E43FA0A3AE93B3C2C4595E5 /* XCTest.framework */; };
+		0D59971392B10D39FC291773E7EAC7AE /* ZLPermissionCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BBE35B3E3D7AB9782537A5A55201A99 /* ZLPermissionCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12C8FD3D06F867281B3C87497145DC65 /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		267AEE0BF1514767DD64B50559013EB3 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */; };
-		312BB83BA7E2BC3676DE197F06380E72 /* ZLPermissionMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F0371B48074471B36FD7F6DCF41085 /* ZLPermissionMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		310951C17D401B90631015E3F12A50F4 /* ZLPermissionCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = F34C243D3C2C11E2115F4EA49CEE0974 /* ZLPermissionCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		33E349E32C64A93B3CAC6A2667583E98 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6B5E773973965C73BC40D4388B4C07 /* QuartzCore.framework */; };
 		3777A70A61ED49FCDDB07BE5F0A1C4B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4138A0A13FF7F7B73435E87E54C56C18 /* UIKit.framework */; };
-		3A9C41052935FA776D753381FA16409E /* ZLPermission-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D3FEAA2DD3BF619F9EC354226054E /* ZLPermission-dummy.m */; };
+		3ADA4976856308581D144F491313FB4D /* ZLPermission-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08F559A6167268A0648D4E10752BA6 /* ZLPermission-dummy.m */; };
 		3BF27A2A6F27DCE9645039383FCE19F0 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E5923010B02074CAA9AAF6EA02D66AA /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F6F6CDA8D71ABF78F30F9C5D0F02A44 /* Pods-ZLPermission_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84887E80FB269FC13209152F413A2273 /* Pods-ZLPermission_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4163B45B935E7D1D4DC5587305EF027C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
+		42062EEE775502057176C735FC0EE6E6 /* ZLPermission-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1365C0D9FF8F9E5055F18B1848F9B07E /* ZLPermission-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		428EE5F64F77ED8E5867B02A92997850 /* ZLPermissionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F40C0CCF4C0AD930623C09488E08 /* ZLPermissionCamera.m */; };
 		46ECF96188556C1E604F31B8B3929248 /* Pods-ZLPermission_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F282E1067834588580293683E0F6A152 /* Pods-ZLPermission_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47466E18B8171945D638B2E4CDE78E5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
+		4CC0CAAE7B51B4936308C36222A2D8CF /* ZLPermissionLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D395ECFB6AA11BF69F84F5E710FC3F1 /* ZLPermissionLocation.m */; };
+		4DE666527664A6B7E08EFB05BB65353B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
 		55D9D4D1609F1F4929E1BA1A1B562445 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B6BE10C665F515606A22FD60C6DCC /* FBSnapshotTestCase.m */; };
 		593CC778281D0C5DAFD70A5E285DA86A /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 235A78CFFA6D8B8D86CACD733531CB13 /* UIImage+Compare.m */; };
+		62560CF681707E6CB74D469E4BE1B79E /* ZLPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = AE861CC38814C1F5D0F9E85A8FF36DD2 /* ZLPermission.m */; };
 		6314750B33A0F9BD2CBD5A32CC7ED1D2 /* Pods-ZLPermission_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED225EDB3D59E1ADE4E98AC7E0D7A7A1 /* Pods-ZLPermission_Tests-dummy.m */; };
-		63383B233551289D69D1666FC21341E5 /* GMPermissionPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B9788F3AEF82B6B51AC92689A0158B /* GMPermissionPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64066CA793C90CA645A6D2031654D2CC /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 284833D18C244D2B42966B6EE425AA59 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		76085620117E839C450E794DB3773D79 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		766F6429966FBFF2E2E6A2991BDAFDA9 /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568279DE47DC3AB91598E1317503995 /* UIImage+Diff.m */; };
-		798A1CCCAC202DB326E6EAD531236AF6 /* ZLPermissionMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F057EA4FB06AAFA8174328B2BC449DB /* ZLPermissionMicrophone.m */; };
+		798311A8350B8B15711AC99DE56AD84E /* GMPermissionPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = CC2ADD46ED0A6EF5B42ADFC36872A088 /* GMPermissionPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CA66236CDA347ACA342DBCAA0F75C7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
-		7D0CE9522C817693B41133E2C587261F /* ZLPermissionCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1ABA8DF652F7B5F541F32D910805CC /* ZLPermissionCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80E37C9B9836B22960F02EA3D5ED9D73 /* GMPermissionPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C03C3E0DD6C3A84B24D5EB33302161 /* GMPermissionPhoto.m */; };
+		7E06489D1BA14CDA07CDB20B5D9D1E5D /* ZLPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2D86195DC4163208A994977C3ED6DD /* ZLPermission.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FD1AB468AF7F87112C3674006F6BC6E /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D66CF296ABBC57EC4D0452397E235 /* SwiftSupport.swift */; };
-		9D6EAF546C8C401BCB4F8F63B0F32C12 /* ZLPermissionLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB2712D7866BDFC59179580A5C9827D /* ZLPermissionLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F577B8EB131F8CD5DA796934DA4DE2E /* ZLPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = D227493FC6FB8B0BA8B15EBD273C5C70 /* ZLPermission.m */; };
-		A010EAABB1C6CDAD1BF3B26C8EEA8C16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
-		ABCDA6460897705B70B07ABC96E23981 /* ZLPermissionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F40FE052405AA1F35FE43A5AA3E49979 /* ZLPermissionCamera.m */; };
 		AEFB700F9EE77EE9848A8AC8C3F00A7F /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */; };
-		C889E893E2500EEAAFAAE74ACE55D330 /* ZLPermissionBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 379894B5829F87391FC00644BF561D55 /* ZLPermissionBluetooth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B647BB3436F4E9F12F454A5FAFB7A2B5 /* ZLPermissionMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B927E6449DE78F6AE6FC82F8084878A /* ZLPermissionMicrophone.m */; };
+		C0896019223C2A283CB45EA4D6C01BF2 /* ZLPermissionBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17AF7C70FB477FF60AE4FEFAB2D8AC /* ZLPermissionBluetooth.m */; };
+		CA65EADEEBB72DED0C1DE84F70896694 /* ZLPermissionBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 03F2A7A2FAEF8F9B552F8B79A3337EC1 /* ZLPermissionBluetooth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDFFD239D09660582F14E84B16A09467 /* ZLPermissionLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DA964CE8318F4E50624FFE876EB1D39 /* ZLPermissionLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE0DC4614B4FF855B2101D7F74A710AC /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F538C426803AE34255FC6E35B408CCA /* UIApplication+StrictKeyWindow.m */; };
 		CF65A6A0F5F9A6A9FBF5501610AAD758 /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9FF9459FBCDC4AF88FB6B5A4CC1439 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D37076F15D2A481AD7E1B009EE2A8C93 /* ZLPermissionReminders.h in Headers */ = {isa = PBXBuildFile; fileRef = 569327EB6CB94DF94884CC2338808D92 /* ZLPermissionReminders.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA747A80391988F1202FF4989A0E12CF /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E17CBAC81F549C7FB39ABA8CEC40E497 /* ZLPermission-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D715D822822FAE58683DFA9BED263D00 /* ZLPermission-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB244482B4DE71F9834F96E4728645F8 /* ZLPermissionMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = D80B4A19ECD83BD8BD7455C7F611853B /* ZLPermissionMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1338DDDC86419B5578FB5C7446E2A5D /* ZLPermissionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 542CE824B82F188A9F7EBC6669C993B9 /* ZLPermissionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4F6CF5EA1B12C55385D3CDC6BD1F4D8 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 656116C8FA5458F45D4707110C9530EC /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E759C2EC9B730E3C9C562BBB533B85DC /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */; };
 		EA5924031A71EF807EC467903E26FAC0 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = D872A3EE224412D4057C234FBC629F9C /* UIImage+Snapshot.m */; };
 		EC2B1D16352F2D3C2403A8F2DA07B222 /* Pods-ZLPermission_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE5B991DB59A0EB3ACF8DBBE289AC26 /* Pods-ZLPermission_Example-dummy.m */; };
-		EF84C9B178F9BA87D616A63EC4A66801 /* ZLPermissionLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2EFC5DB059926650B8516E1E6B3628 /* ZLPermissionLocation.m */; };
-		F2842A25AAE3AD164615E691BAF2C83C /* ZLPermissionBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2CDC4DDB38FD88948DD4D334194A4B /* ZLPermissionBluetooth.m */; };
-		F70DB161A42C163B2E2C76A05088B913 /* ZLPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = F58EDC0FF0C8C15142CE746A2F44AF72 /* ZLPermission.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0544B8597EC88E03E4B6694070B9F42 /* GMPermissionPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7194AB38E9ED9C98927AD11F0120E9B2 /* GMPermissionPhoto.m */; };
+		F345593389E9D09E38ECA83A179C7552 /* ZLPermissionReminders.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE7E5DB6290A0FA841CDA39A66419D1 /* ZLPermissionReminders.m */; };
 		F822382AB9E7B343C04964B313B1743D /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FE7EAFB6D5EC7FF89A7C3750CFB399DD /* ZLPermissionCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3448FE4493D8B00E639CCFDA9A44134E /* ZLPermissionCalendar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B49DD662AA2950E2825EF995CE5A292 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6B8D7D3A258B269B031822CCF08AEEE0;
-			remoteInfo = "Pods-ZLPermission_Example";
-		};
-		4DBE64668EA76A1F86408B2AB1769F3C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98A98149697C80CEF8D5772791E92E66;
-			remoteInfo = FBSnapshotTestCase;
-		};
-		B7537155269485567FEDEDA9074F7AC1 /* PBXContainerItemProxy */ = {
+		207F3C7FCA35818598C440C2E03222D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 19853193353B09902D7FB993B52D3F8C;
 			remoteInfo = ZLPermission;
 		};
+		996C1626FCFCEC11730F3028C7094D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98A98149697C80CEF8D5772791E92E66;
+			remoteInfo = FBSnapshotTestCase;
+		};
+		D89C3DDF1A3627DEA8A0EFDF853DA19B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B8D7D3A258B269B031822CCF08AEEE0;
+			remoteInfo = "Pods-ZLPermission_Example";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		018C5E88199C43E7B15C4DF01ED4FCA8 /* ZLPermission.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZLPermission.modulemap; sourceTree = "<group>"; };
+		03F2A7A2FAEF8F9B552F8B79A3337EC1 /* ZLPermissionBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionBluetooth.h; path = ZLPermission/Classes/bluetooth/ZLPermissionBluetooth.h; sourceTree = "<group>"; };
 		0F538C426803AE34255FC6E35B408CCA /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
+		0FA5D3B6850C5A67A6F980992BB13E0F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0FBCBBD7AE8AB011D469E71C2C6ADA8A /* ZLPermission-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZLPermission-Info.plist"; sourceTree = "<group>"; };
+		1365C0D9FF8F9E5055F18B1848F9B07E /* ZLPermission-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZLPermission-umbrella.h"; sourceTree = "<group>"; };
+		187817EB66FB673FE27DD25A249C1BEB /* ZLPermission.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZLPermission.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1901D05535DFF2BE57F48A793C3366DA /* Pods-ZLPermission_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZLPermission_Tests.modulemap"; sourceTree = "<group>"; };
 		1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		235A78CFFA6D8B8D86CACD733531CB13 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
 		26BC96F34E43FA0A3AE93B3C2C4595E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		277B6BE10C665F515606A22FD60C6DCC /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
 		284833D18C244D2B42966B6EE425AA59 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
-		2A9D3FEAA2DD3BF619F9EC354226054E /* ZLPermission-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZLPermission-dummy.m"; sourceTree = "<group>"; };
-		379894B5829F87391FC00644BF561D55 /* ZLPermissionBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionBluetooth.h; path = ZLPermission/Classes/bluetooth/ZLPermissionBluetooth.h; sourceTree = "<group>"; };
-		38F0371B48074471B36FD7F6DCF41085 /* ZLPermissionMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionMicrophone.h; path = ZLPermission/Classes/microphone/ZLPermissionMicrophone.h; sourceTree = "<group>"; };
+		3448FE4493D8B00E639CCFDA9A44134E /* ZLPermissionCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionCalendar.m; path = ZLPermission/Classes/calendar/ZLPermissionCalendar.m; sourceTree = "<group>"; };
 		3F0D66CF296ABBC57EC4D0452397E235 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		4138A0A13FF7F7B73435E87E54C56C18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4568279DE47DC3AB91598E1317503995 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
+		4B927E6449DE78F6AE6FC82F8084878A /* ZLPermissionMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionMicrophone.m; path = ZLPermission/Classes/microphone/ZLPermissionMicrophone.m; sourceTree = "<group>"; };
+		4BBE35B3E3D7AB9782537A5A55201A99 /* ZLPermissionCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionCalendar.h; path = ZLPermission/Classes/calendar/ZLPermissionCalendar.h; sourceTree = "<group>"; };
 		4C6513B09838318BD763CFD5390D1DE0 /* FBSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
+		4D395ECFB6AA11BF69F84F5E710FC3F1 /* ZLPermissionLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionLocation.m; path = ZLPermission/Classes/location/ZLPermissionLocation.m; sourceTree = "<group>"; };
 		5324C34CB830F345814C652644932CCB /* Pods-ZLPermission_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLPermission_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		542CE824B82F188A9F7EBC6669C993B9 /* ZLPermissionProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionProtocol.h; path = ZLPermission/Classes/base/ZLPermissionProtocol.h; sourceTree = "<group>"; };
+		569327EB6CB94DF94884CC2338808D92 /* ZLPermissionReminders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionReminders.h; path = ZLPermission/Classes/reminders/ZLPermissionReminders.h; sourceTree = "<group>"; };
 		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA964CE8318F4E50624FFE876EB1D39 /* ZLPermissionLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionLocation.h; path = ZLPermission/Classes/location/ZLPermissionLocation.h; sourceTree = "<group>"; };
 		5E6B5E773973965C73BC40D4388B4C07 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		61DACE13538301BA8571C5CF78BE4A0B /* ZLPermission.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZLPermission.release.xcconfig; sourceTree = "<group>"; };
 		656116C8FA5458F45D4707110C9530EC /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		65AA36E049D3E64A5918431389773C0C /* Pods-ZLPermission_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZLPermission_Tests-Info.plist"; sourceTree = "<group>"; };
-		65B9788F3AEF82B6B51AC92689A0158B /* GMPermissionPhoto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMPermissionPhoto.h; path = ZLPermission/Classes/photo/GMPermissionPhoto.h; sourceTree = "<group>"; };
-		6787D294146D2050F9083124808B2FD0 /* ZLPermission.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZLPermission.release.xcconfig; sourceTree = "<group>"; };
 		692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6A7C33A9A5F78D71C6DF4CCE85DFCB08 /* Pods-ZLPermission_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLPermission_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
-		6E29E22C24C6D4102F6AE3385B7D3790 /* ZLPermissionProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionProtocol.h; path = ZLPermission/Classes/base/ZLPermissionProtocol.h; sourceTree = "<group>"; };
-		7498E5FA3701803CFC6329E51872EAFA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7194AB38E9ED9C98927AD11F0120E9B2 /* GMPermissionPhoto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMPermissionPhoto.m; path = ZLPermission/Classes/photo/GMPermissionPhoto.m; sourceTree = "<group>"; };
 		75FE6FC9E219DF366BEED5241E17961C /* Pods-ZLPermission_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZLPermission_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		77354D9DC11BE24B8E73BD6C25FF7028 /* ZLPermission.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZLPermission.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		78A06AF6B912B4EB7A970D361A081B3E /* Pods-ZLPermission_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLPermission_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		7B2EFC5DB059926650B8516E1E6B3628 /* ZLPermissionLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionLocation.m; path = ZLPermission/Classes/location/ZLPermissionLocation.m; sourceTree = "<group>"; };
+		7E17AF7C70FB477FF60AE4FEFAB2D8AC /* ZLPermissionBluetooth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionBluetooth.m; path = ZLPermission/Classes/bluetooth/ZLPermissionBluetooth.m; sourceTree = "<group>"; };
 		7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		831A28C7067B16893F95F89F5206D244 /* Pods-ZLPermission_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLPermission_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		84887E80FB269FC13209152F413A2273 /* Pods-ZLPermission_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZLPermission_Example-umbrella.h"; sourceTree = "<group>"; };
 		87E75035E515E9B6F98C5B6479980E4A /* Pods-ZLPermission_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZLPermission_Example.modulemap"; sourceTree = "<group>"; };
-		882DC48A770969615905B212ED0F9A51 /* ZLPermission-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZLPermission-Info.plist"; sourceTree = "<group>"; };
 		88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
 		89607B1BA3514A811405CC0C4D5AFBC6 /* Pods-ZLPermission_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLPermission_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8B2D86195DC4163208A994977C3ED6DD /* ZLPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermission.h; path = ZLPermission/Classes/base/ZLPermission.h; sourceTree = "<group>"; };
 		8B392FDB38C2EEC6E1C63092011CD4AC /* Pods-ZLPermission_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZLPermission_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8E5923010B02074CAA9AAF6EA02D66AA /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
 		8ED63C28613C5C47C93742CC0B40B527 /* Pods-ZLPermission_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZLPermission_Example-Info.plist"; sourceTree = "<group>"; };
-		8F057EA4FB06AAFA8174328B2BC449DB /* ZLPermissionMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionMicrophone.m; path = ZLPermission/Classes/microphone/ZLPermissionMicrophone.m; sourceTree = "<group>"; };
-		8FB2712D7866BDFC59179580A5C9827D /* ZLPermissionLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionLocation.h; path = ZLPermission/Classes/location/ZLPermissionLocation.h; sourceTree = "<group>"; };
 		92047A3427A558DCA07320EE60699663 /* Pods-ZLPermission_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ZLPermission_Example"; path = Pods_ZLPermission_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9468E867498BBAF36F9AFFE4845F8B09 /* FBSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
-		95C03C3E0DD6C3A84B24D5EB33302161 /* GMPermissionPhoto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GMPermissionPhoto.m; path = ZLPermission/Classes/photo/GMPermissionPhoto.m; sourceTree = "<group>"; };
 		96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
+		9D08F559A6167268A0648D4E10752BA6 /* ZLPermission-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZLPermission-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AACAB823B5FD6999B368A1EE37D3C510 /* Pods-ZLPermission_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZLPermission_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AD3B598ACDF052025A4CF58C21BBA7A7 /* ZLPermission.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZLPermission.modulemap; sourceTree = "<group>"; };
+		AE861CC38814C1F5D0F9E85A8FF36DD2 /* ZLPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermission.m; path = ZLPermission/Classes/base/ZLPermission.m; sourceTree = "<group>"; };
 		AE9FF9459FBCDC4AF88FB6B5A4CC1439 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		B072ABA4B9A9D780D872B365AED7E7CA /* Pods-ZLPermission_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZLPermission_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B170A2ACD2C84C485692F51F03AA6B81 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B47C3419F60835A51FDCF61042DE8EC9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		B6D1E1EF81A426E18E90DCA44466B156 /* ZLPermission */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZLPermission; path = ZLPermission.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7103CA00AED20722C5B69CA5B4F6938 /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
 		BAE5B991DB59A0EB3ACF8DBBE289AC26 /* Pods-ZLPermission_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZLPermission_Example-dummy.m"; sourceTree = "<group>"; };
 		BDB907372A2699DC1313D8515FE9D292 /* Pods-ZLPermission_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLPermission_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		BE2CDC4DDB38FD88948DD4D334194A4B /* ZLPermissionBluetooth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionBluetooth.m; path = ZLPermission/Classes/bluetooth/ZLPermissionBluetooth.m; sourceTree = "<group>"; };
-		CA1ABA8DF652F7B5F541F32D910805CC /* ZLPermissionCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionCamera.h; path = ZLPermission/Classes/camera/ZLPermissionCamera.h; sourceTree = "<group>"; };
 		CBFF6C5FD9C3A84274A9314D3E940B6E /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
-		CCCD634A4DA8D9882D69069855647156 /* ZLPermission-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZLPermission-prefix.pch"; sourceTree = "<group>"; };
-		CCF7688543D3FF9F3DAE6F1DDEE08092 /* ZLPermission.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZLPermission.debug.xcconfig; sourceTree = "<group>"; };
+		CC2ADD46ED0A6EF5B42ADFC36872A088 /* GMPermissionPhoto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMPermissionPhoto.h; path = ZLPermission/Classes/photo/GMPermissionPhoto.h; sourceTree = "<group>"; };
 		CD6892681973A88CEF917D337784AC01 /* Pods-ZLPermission_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ZLPermission_Tests"; path = Pods_ZLPermission_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08CEBB9BDD9EF7A662ECFC0305C169E /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
-		D227493FC6FB8B0BA8B15EBD273C5C70 /* ZLPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermission.m; path = ZLPermission/Classes/base/ZLPermission.m; sourceTree = "<group>"; };
-		D715D822822FAE58683DFA9BED263D00 /* ZLPermission-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZLPermission-umbrella.h"; sourceTree = "<group>"; };
+		D80B4A19ECD83BD8BD7455C7F611853B /* ZLPermissionMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionMicrophone.h; path = ZLPermission/Classes/microphone/ZLPermissionMicrophone.h; sourceTree = "<group>"; };
 		D872A3EE224412D4057C234FBC629F9C /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		D8F7555E57398EEA790EBDBC8F7A76C3 /* ZLPermission.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZLPermission.debug.xcconfig; sourceTree = "<group>"; };
+		E22F6398BB2CAF5FDE838BF0B13F0592 /* ZLPermission-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZLPermission-prefix.pch"; sourceTree = "<group>"; };
+		E2B6F40C0CCF4C0AD930623C09488E08 /* ZLPermissionCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionCamera.m; path = ZLPermission/Classes/camera/ZLPermissionCamera.m; sourceTree = "<group>"; };
 		ED225EDB3D59E1ADE4E98AC7E0D7A7A1 /* Pods-ZLPermission_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZLPermission_Tests-dummy.m"; sourceTree = "<group>"; };
 		F282E1067834588580293683E0F6A152 /* Pods-ZLPermission_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZLPermission_Tests-umbrella.h"; sourceTree = "<group>"; };
-		F40FE052405AA1F35FE43A5AA3E49979 /* ZLPermissionCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionCamera.m; path = ZLPermission/Classes/camera/ZLPermissionCamera.m; sourceTree = "<group>"; };
-		F58EDC0FF0C8C15142CE746A2F44AF72 /* ZLPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermission.h; path = ZLPermission/Classes/base/ZLPermission.h; sourceTree = "<group>"; };
+		F34C243D3C2C11E2115F4EA49CEE0974 /* ZLPermissionCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLPermissionCamera.h; path = ZLPermission/Classes/camera/ZLPermissionCamera.h; sourceTree = "<group>"; };
+		FDE7E5DB6290A0FA841CDA39A66419D1 /* ZLPermissionReminders.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZLPermissionReminders.m; path = ZLPermission/Classes/reminders/ZLPermissionReminders.m; sourceTree = "<group>"; };
 		FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEC80654EF0EE378EB9EDCC5BA894BE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DE666527664A6B7E08EFB05BB65353B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5491EEFF6924561953843E0B987EE81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,41 +195,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2B3588725212F5406E8F0E441215C7F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A010EAABB1C6CDAD1BF3B26C8EEA8C16 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05A765781024867D1B348F5095769C2D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AD3B598ACDF052025A4CF58C21BBA7A7 /* ZLPermission.modulemap */,
-				2A9D3FEAA2DD3BF619F9EC354226054E /* ZLPermission-dummy.m */,
-				882DC48A770969615905B212ED0F9A51 /* ZLPermission-Info.plist */,
-				CCCD634A4DA8D9882D69069855647156 /* ZLPermission-prefix.pch */,
-				D715D822822FAE58683DFA9BED263D00 /* ZLPermission-umbrella.h */,
-				CCF7688543D3FF9F3DAE6F1DDEE08092 /* ZLPermission.debug.xcconfig */,
-				6787D294146D2050F9083124808B2FD0 /* ZLPermission.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ZLPermission";
-			sourceTree = "<group>";
-		};
-		06FDE81A801AF50AC09A5353ACED08B8 /* camera */ = {
-			isa = PBXGroup;
-			children = (
-				CA1ABA8DF652F7B5F541F32D910805CC /* ZLPermissionCamera.h */,
-				F40FE052405AA1F35FE43A5AA3E49979 /* ZLPermissionCamera.m */,
-			);
-			name = camera;
-			sourceTree = "<group>";
-		};
 		10378FFBBC5CDDB277CFD924D51C035D /* Pods-ZLPermission_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,41 +215,37 @@
 			path = "Target Support Files/Pods-ZLPermission_Example";
 			sourceTree = "<group>";
 		};
-		17085BCA4D43A74255D90640981752EF /* microphone */ = {
+		151644CF4754BA9ADCE0EE403E001BE0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				38F0371B48074471B36FD7F6DCF41085 /* ZLPermissionMicrophone.h */,
-				8F057EA4FB06AAFA8174328B2BC449DB /* ZLPermissionMicrophone.m */,
+				018C5E88199C43E7B15C4DF01ED4FCA8 /* ZLPermission.modulemap */,
+				9D08F559A6167268A0648D4E10752BA6 /* ZLPermission-dummy.m */,
+				0FBCBBD7AE8AB011D469E71C2C6ADA8A /* ZLPermission-Info.plist */,
+				E22F6398BB2CAF5FDE838BF0B13F0592 /* ZLPermission-prefix.pch */,
+				1365C0D9FF8F9E5055F18B1848F9B07E /* ZLPermission-umbrella.h */,
+				D8F7555E57398EEA790EBDBC8F7A76C3 /* ZLPermission.debug.xcconfig */,
+				61DACE13538301BA8571C5CF78BE4A0B /* ZLPermission.release.xcconfig */,
 			);
-			name = microphone;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ZLPermission";
 			sourceTree = "<group>";
 		};
-		190B67220D4DC150709C0113F56CA6A1 /* bluetooth */ = {
+		31224E98702919547319F5005DFB8E74 /* bluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				379894B5829F87391FC00644BF561D55 /* ZLPermissionBluetooth.h */,
-				BE2CDC4DDB38FD88948DD4D334194A4B /* ZLPermissionBluetooth.m */,
+				03F2A7A2FAEF8F9B552F8B79A3337EC1 /* ZLPermissionBluetooth.h */,
+				7E17AF7C70FB477FF60AE4FEFAB2D8AC /* ZLPermissionBluetooth.m */,
 			);
 			name = bluetooth;
 			sourceTree = "<group>";
 		};
-		19D589DF93E12F558EC39BE65CBD68BE /* photo */ = {
+		46308F86783583A86C5D7C395944B093 /* microphone */ = {
 			isa = PBXGroup;
 			children = (
-				65B9788F3AEF82B6B51AC92689A0158B /* GMPermissionPhoto.h */,
-				95C03C3E0DD6C3A84B24D5EB33302161 /* GMPermissionPhoto.m */,
+				D80B4A19ECD83BD8BD7455C7F611853B /* ZLPermissionMicrophone.h */,
+				4B927E6449DE78F6AE6FC82F8084878A /* ZLPermissionMicrophone.m */,
 			);
-			name = photo;
-			sourceTree = "<group>";
-		};
-		3BB771046C8729202E47B68EA2615CAF /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				7498E5FA3701803CFC6329E51872EAFA /* LICENSE */,
-				B170A2ACD2C84C485692F51F03AA6B81 /* README.md */,
-				77354D9DC11BE24B8E73BD6C25FF7028 /* ZLPermission.podspec */,
-			);
-			name = Pod;
+			name = microphone;
 			sourceTree = "<group>";
 		};
 		4BA2479549DD918290454B1CDCD0B92B /* Core */ = {
@@ -289,12 +269,31 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		6DCCFC8BD834A1F6CE98B3108FFF4A50 /* Development Pods */ = {
+		536478947AC356BE8449190D4D2FB599 /* reminders */ = {
 			isa = PBXGroup;
 			children = (
-				FA98328559B247B9747761D4DAB1B052 /* ZLPermission */,
+				569327EB6CB94DF94884CC2338808D92 /* ZLPermissionReminders.h */,
+				FDE7E5DB6290A0FA841CDA39A66419D1 /* ZLPermissionReminders.m */,
 			);
-			name = "Development Pods";
+			name = reminders;
+			sourceTree = "<group>";
+		};
+		5BA6E2D5C0D458FD71AECCF6AE8D8D84 /* calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4BBE35B3E3D7AB9782537A5A55201A99 /* ZLPermissionCalendar.h */,
+				3448FE4493D8B00E639CCFDA9A44134E /* ZLPermissionCalendar.m */,
+			);
+			name = calendar;
+			sourceTree = "<group>";
+		};
+		6A79377455D134FE4DAF5616E88B065E /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				F34C243D3C2C11E2115F4EA49CEE0974 /* ZLPermissionCamera.h */,
+				E2B6F40C0CCF4C0AD930623C09488E08 /* ZLPermissionCamera.m */,
+			);
+			name = camera;
 			sourceTree = "<group>";
 		};
 		6FF5B7D93120FFB31B7F610E66650617 /* Products */ = {
@@ -353,23 +352,30 @@
 			name = SwiftSupport;
 			sourceTree = "<group>";
 		};
-		9E06F4100C4D00BABC7091F226BFFCCC /* base */ = {
+		934739A7A1C326B65B430E89D864A31A /* ZLPermission */ = {
 			isa = PBXGroup;
 			children = (
-				F58EDC0FF0C8C15142CE746A2F44AF72 /* ZLPermission.h */,
-				D227493FC6FB8B0BA8B15EBD273C5C70 /* ZLPermission.m */,
-				6E29E22C24C6D4102F6AE3385B7D3790 /* ZLPermissionProtocol.h */,
+				F8AB2A41FD5E4B47C9154242F5243FC3 /* base */,
+				31224E98702919547319F5005DFB8E74 /* bluetooth */,
+				5BA6E2D5C0D458FD71AECCF6AE8D8D84 /* calendar */,
+				6A79377455D134FE4DAF5616E88B065E /* camera */,
+				F42987C7D5E5CD654181776ECE044E9E /* location */,
+				46308F86783583A86C5D7C395944B093 /* microphone */,
+				DED39E7939A9662944B255801403FAE3 /* photo */,
+				FB450D3359D079E4D9561FEC2FC4147C /* Pod */,
+				536478947AC356BE8449190D4D2FB599 /* reminders */,
+				151644CF4754BA9ADCE0EE403E001BE0 /* Support Files */,
 			);
-			name = base;
+			name = ZLPermission;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		9FA382F03D9E6DB6FB264CB2A0F704F6 /* location */ = {
+		9C658669B1B51F1F7BDFA2C2D9D95C29 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8FB2712D7866BDFC59179580A5C9827D /* ZLPermissionLocation.h */,
-				7B2EFC5DB059926650B8516E1E6B3628 /* ZLPermissionLocation.m */,
+				934739A7A1C326B65B430E89D864A31A /* ZLPermission */,
 			);
-			name = location;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		B69B2ECE2D2C9A3924A9231138CE0BBC /* Support Files */ = {
@@ -410,12 +416,21 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				6DCCFC8BD834A1F6CE98B3108FFF4A50 /* Development Pods */,
+				9C658669B1B51F1F7BDFA2C2D9D95C29 /* Development Pods */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				E81A37DBDE41E671312C56736544E2FA /* Pods */,
 				6FF5B7D93120FFB31B7F610E66650617 /* Products */,
 				865854C12329AE66BB88164618328A57 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		DED39E7939A9662944B255801403FAE3 /* photo */ = {
+			isa = PBXGroup;
+			children = (
+				CC2ADD46ED0A6EF5B42ADFC36872A088 /* GMPermissionPhoto.h */,
+				7194AB38E9ED9C98927AD11F0120E9B2 /* GMPermissionPhoto.m */,
+			);
+			name = photo;
 			sourceTree = "<group>";
 		};
 		E81A37DBDE41E671312C56736544E2FA /* Pods */ = {
@@ -426,40 +441,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FA98328559B247B9747761D4DAB1B052 /* ZLPermission */ = {
+		F42987C7D5E5CD654181776ECE044E9E /* location */ = {
 			isa = PBXGroup;
 			children = (
-				9E06F4100C4D00BABC7091F226BFFCCC /* base */,
-				190B67220D4DC150709C0113F56CA6A1 /* bluetooth */,
-				06FDE81A801AF50AC09A5353ACED08B8 /* camera */,
-				9FA382F03D9E6DB6FB264CB2A0F704F6 /* location */,
-				17085BCA4D43A74255D90640981752EF /* microphone */,
-				19D589DF93E12F558EC39BE65CBD68BE /* photo */,
-				3BB771046C8729202E47B68EA2615CAF /* Pod */,
-				05A765781024867D1B348F5095769C2D /* Support Files */,
+				5DA964CE8318F4E50624FFE876EB1D39 /* ZLPermissionLocation.h */,
+				4D395ECFB6AA11BF69F84F5E710FC3F1 /* ZLPermissionLocation.m */,
 			);
-			name = ZLPermission;
-			path = ../..;
+			name = location;
+			sourceTree = "<group>";
+		};
+		F8AB2A41FD5E4B47C9154242F5243FC3 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				8B2D86195DC4163208A994977C3ED6DD /* ZLPermission.h */,
+				AE861CC38814C1F5D0F9E85A8FF36DD2 /* ZLPermission.m */,
+				542CE824B82F188A9F7EBC6669C993B9 /* ZLPermissionProtocol.h */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		FB450D3359D079E4D9561FEC2FC4147C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B47C3419F60835A51FDCF61042DE8EC9 /* LICENSE */,
+				0FA5D3B6850C5A67A6F980992BB13E0F /* README.md */,
+				187817EB66FB673FE27DD25A249C1BEB /* ZLPermission.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4C2B3D96C4206ECA7CA68E2849E8A27E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				63383B233551289D69D1666FC21341E5 /* GMPermissionPhoto.h in Headers */,
-				F70DB161A42C163B2E2C76A05088B913 /* ZLPermission.h in Headers */,
-				E17CBAC81F549C7FB39ABA8CEC40E497 /* ZLPermission-umbrella.h in Headers */,
-				C889E893E2500EEAAFAAE74ACE55D330 /* ZLPermissionBluetooth.h in Headers */,
-				7D0CE9522C817693B41133E2C587261F /* ZLPermissionCamera.h in Headers */,
-				9D6EAF546C8C401BCB4F8F63B0F32C12 /* ZLPermissionLocation.h in Headers */,
-				312BB83BA7E2BC3676DE197F06380E72 /* ZLPermissionMicrophone.h in Headers */,
-				00C5C657E0038EB028541D0E7832EFE6 /* ZLPermissionProtocol.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6A11A4ED6C92ACA1C089260BA3F0C776 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,17 +504,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1870EBCB35C6741066937CC5FDEFAE0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				798311A8350B8B15711AC99DE56AD84E /* GMPermissionPhoto.h in Headers */,
+				7E06489D1BA14CDA07CDB20B5D9D1E5D /* ZLPermission.h in Headers */,
+				42062EEE775502057176C735FC0EE6E6 /* ZLPermission-umbrella.h in Headers */,
+				CA65EADEEBB72DED0C1DE84F70896694 /* ZLPermissionBluetooth.h in Headers */,
+				0D59971392B10D39FC291773E7EAC7AE /* ZLPermissionCalendar.h in Headers */,
+				310951C17D401B90631015E3F12A50F4 /* ZLPermissionCamera.h in Headers */,
+				CDFFD239D09660582F14E84B16A09467 /* ZLPermissionLocation.h in Headers */,
+				DB244482B4DE71F9834F96E4728645F8 /* ZLPermissionMicrophone.h in Headers */,
+				E1338DDDC86419B5578FB5C7446E2A5D /* ZLPermissionProtocol.h in Headers */,
+				D37076F15D2A481AD7E1B009EE2A8C93 /* ZLPermissionReminders.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		19853193353B09902D7FB993B52D3F8C /* ZLPermission */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB4E7F43ACDFE5ECB1FCB8F55CBD243B /* Build configuration list for PBXNativeTarget "ZLPermission" */;
+			buildConfigurationList = EB69578E284DEE07015BE41C1F293475 /* Build configuration list for PBXNativeTarget "ZLPermission" */;
 			buildPhases = (
-				4C2B3D96C4206ECA7CA68E2849E8A27E /* Headers */,
-				EAF89D72EDEB74FCF53CC99C3863F990 /* Sources */,
-				F2B3588725212F5406E8F0E441215C7F /* Frameworks */,
-				8D4EE7A55938C4E2431F225BC3549EF1 /* Resources */,
+				D1870EBCB35C6741066937CC5FDEFAE0 /* Headers */,
+				2277C1D7ECC452C4500D1C43DA9AA694 /* Sources */,
+				AEC80654EF0EE378EB9EDCC5BA894BE8 /* Frameworks */,
+				6070C80465403D09FD83DB57BFFEDC66 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -524,7 +554,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3193A7F9547CF78531F8B996A60AC4EB /* PBXTargetDependency */,
+				2E5833011482A1490887B622A730B254 /* PBXTargetDependency */,
 			);
 			name = "Pods-ZLPermission_Example";
 			productName = Pods_ZLPermission_Example;
@@ -543,8 +573,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				57360F1CC6F8004DFF6C2295BB87E0F3 /* PBXTargetDependency */,
-				A606B3A321B1F1A71B6028CBDD21A7B8 /* PBXTargetDependency */,
+				C92095AB5001FDE712FD63AD49C11ED9 /* PBXTargetDependency */,
+				6CAB3E6B0B371361EFBFABAC54DBC415 /* PBXTargetDependency */,
 			);
 			name = "Pods-ZLPermission_Tests";
 			productName = Pods_ZLPermission_Tests;
@@ -602,7 +632,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8D4EE7A55938C4E2431F225BC3549EF1 /* Resources */ = {
+		6070C80465403D09FD83DB57BFFEDC66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -641,6 +671,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2277C1D7ECC452C4500D1C43DA9AA694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0544B8597EC88E03E4B6694070B9F42 /* GMPermissionPhoto.m in Sources */,
+				62560CF681707E6CB74D469E4BE1B79E /* ZLPermission.m in Sources */,
+				3ADA4976856308581D144F491313FB4D /* ZLPermission-dummy.m in Sources */,
+				C0896019223C2A283CB45EA4D6C01BF2 /* ZLPermissionBluetooth.m in Sources */,
+				FE7EAFB6D5EC7FF89A7C3750CFB399DD /* ZLPermissionCalendar.m in Sources */,
+				428EE5F64F77ED8E5867B02A92997850 /* ZLPermissionCamera.m in Sources */,
+				4CC0CAAE7B51B4936308C36222A2D8CF /* ZLPermissionLocation.m in Sources */,
+				B647BB3436F4E9F12F454A5FAFB7A2B5 /* ZLPermissionMicrophone.m in Sources */,
+				F345593389E9D09E38ECA83A179C7552 /* ZLPermissionReminders.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DA3839A33C7C055FF6A032177BA7F36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -665,40 +711,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EAF89D72EDEB74FCF53CC99C3863F990 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80E37C9B9836B22960F02EA3D5ED9D73 /* GMPermissionPhoto.m in Sources */,
-				9F577B8EB131F8CD5DA796934DA4DE2E /* ZLPermission.m in Sources */,
-				3A9C41052935FA776D753381FA16409E /* ZLPermission-dummy.m in Sources */,
-				F2842A25AAE3AD164615E691BAF2C83C /* ZLPermissionBluetooth.m in Sources */,
-				ABCDA6460897705B70B07ABC96E23981 /* ZLPermissionCamera.m in Sources */,
-				EF84C9B178F9BA87D616A63EC4A66801 /* ZLPermissionLocation.m in Sources */,
-				798A1CCCAC202DB326E6EAD531236AF6 /* ZLPermissionMicrophone.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3193A7F9547CF78531F8B996A60AC4EB /* PBXTargetDependency */ = {
+		2E5833011482A1490887B622A730B254 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ZLPermission;
 			target = 19853193353B09902D7FB993B52D3F8C /* ZLPermission */;
-			targetProxy = B7537155269485567FEDEDA9074F7AC1 /* PBXContainerItemProxy */;
+			targetProxy = 207F3C7FCA35818598C440C2E03222D2 /* PBXContainerItemProxy */;
 		};
-		57360F1CC6F8004DFF6C2295BB87E0F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FBSnapshotTestCase;
-			target = 98A98149697C80CEF8D5772791E92E66 /* FBSnapshotTestCase */;
-			targetProxy = 4DBE64668EA76A1F86408B2AB1769F3C /* PBXContainerItemProxy */;
-		};
-		A606B3A321B1F1A71B6028CBDD21A7B8 /* PBXTargetDependency */ = {
+		6CAB3E6B0B371361EFBFABAC54DBC415 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ZLPermission_Example";
 			target = 6B8D7D3A258B269B031822CCF08AEEE0 /* Pods-ZLPermission_Example */;
-			targetProxy = 2B49DD662AA2950E2825EF995CE5A292 /* PBXContainerItemProxy */;
+			targetProxy = D89C3DDF1A3627DEA8A0EFDF853DA19B /* PBXContainerItemProxy */;
+		};
+		C92095AB5001FDE712FD63AD49C11ED9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSnapshotTestCase;
+			target = 98A98149697C80CEF8D5772791E92E66 /* FBSnapshotTestCase */;
+			targetProxy = 996C1626FCFCEC11730F3028C7094D36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -773,6 +805,42 @@
 			};
 			name = Release;
 		};
+		193A2FD1BE8A6F9E5DEF9D97B576FB82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61DACE13538301BA8571C5CF78BE4A0B /* ZLPermission.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/ZLPermission/ZLPermission-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/ZLPermission/ZLPermission-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZLPermission/ZLPermission.modulemap";
+				PRODUCT_MODULE_NAME = ZLPermission;
+				PRODUCT_NAME = ZLPermission;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		2333DE7730C61CBA578427330ADAA536 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDB907372A2699DC1313D8515FE9D292 /* Pods-ZLPermission_Example.debug.xcconfig */;
@@ -802,6 +870,41 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4277B3E3DB1FD7C27B2C02AB93E546E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8F7555E57398EEA790EBDBC8F7A76C3 /* ZLPermission.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/ZLPermission/ZLPermission-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/ZLPermission/ZLPermission-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZLPermission/ZLPermission.modulemap";
+				PRODUCT_MODULE_NAME = ZLPermission;
+				PRODUCT_NAME = ZLPermission;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -914,41 +1017,6 @@
 			};
 			name = Release;
 		};
-		7482725D8432C1B7DE604BF53396580E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCF7688543D3FF9F3DAE6F1DDEE08092 /* ZLPermission.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/ZLPermission/ZLPermission-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/ZLPermission/ZLPermission-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZLPermission/ZLPermission.modulemap";
-				PRODUCT_MODULE_NAME = ZLPermission;
-				PRODUCT_NAME = ZLPermission;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1008,42 +1076,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		ACA59D272557B13A39D80522B23211E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6787D294146D2050F9083124808B2FD0 /* ZLPermission.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/ZLPermission/ZLPermission-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/ZLPermission/ZLPermission-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZLPermission/ZLPermission.modulemap";
-				PRODUCT_MODULE_NAME = ZLPermission;
-				PRODUCT_NAME = ZLPermission;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1152,11 +1184,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB4E7F43ACDFE5ECB1FCB8F55CBD243B /* Build configuration list for PBXNativeTarget "ZLPermission" */ = {
+		EB69578E284DEE07015BE41C1F293475 /* Build configuration list for PBXNativeTarget "ZLPermission" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7482725D8432C1B7DE604BF53396580E /* Debug */,
-				ACA59D272557B13A39D80522B23211E9 /* Release */,
+				4277B3E3DB1FD7C27B2C02AB93E546E4 /* Debug */,
+				193A2FD1BE8A6F9E5DEF9D97B576FB82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

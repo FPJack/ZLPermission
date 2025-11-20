@@ -75,6 +75,16 @@ typedef NS_OPTIONS(NSInteger, ZLBluetoothCapabilities) {
     ZLBluetoothCapabilityPoweredOn    = 1 << 8,/// 系统已开启
 };
 
+//日历和提醒事件
+typedef NS_ENUM(NSInteger,ZLEventAuthorizationStatus)
+{
+    ZLEventAuthorizationStatusNotDetermined = 0,
+    ZLEventAuthorizationStatusRestricted,
+    ZLEventAuthorizationStatusDenied,
+    ZLEventAuthorizationStatusFullAccess,
+    ZLEventAuthorizationStatusWriteOnly
+};
+
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureCallback)(BOOL isFirst,NSInteger status);
@@ -168,6 +178,17 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+@end
+
+
+@protocol ZLEventPermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLEventPermissionProtocol> )share;
+- (ZLEventAuthorizationStatus)getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure;
 @end
 
 NS_ASSUME_NONNULL_END

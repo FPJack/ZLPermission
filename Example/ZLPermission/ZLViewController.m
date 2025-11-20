@@ -24,9 +24,15 @@
 //    [self requestPhotoPermission];
 //    [self requestMicrophonePermission];
 //    [self requestLocationPermission];
-     [self requestBluetoothPermission];
-    [self requestBluetoothPermission];
-
+    [self requestCalendarPermission];
+    [self requestRemindersPermission];
+    
+}
+- (void)requestRemindersPermission {
+    [ZLPermission.reminders requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+}
+- (void)requestCalendarPermission {
+    [ZLPermission.calendar requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestBluetoothPermission {
     [ZLPermission.bluetooth requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
@@ -61,6 +67,10 @@
         @(ZLPermissionTypeMicrophone):@"麦克风",
         @(ZLPermissionTypeLocation):@"定位",
         @(ZLPermissionTypeBluetooth):@"蓝牙",
+        @(ZLPermissionTypeNotification):@"通知",
+        @(ZLPermissionTypeMediaLibrary):@"媒体资料库",
+        @(ZLPermissionTypeCalendar):@"日历",
+        @(ZLPermissionTypeReminders):@"提醒事项",
     };
     return dic[@(type)];
 }

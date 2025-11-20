@@ -13,10 +13,12 @@
 #import "ZLPermission.h"
 #import "ZLPermissionProtocol.h"
 #import "ZLPermissionBluetooth.h"
+#import "ZLPermissionCalendar.h"
 #import "ZLPermissionCamera.h"
 #import "ZLPermissionLocation.h"
 #import "ZLPermissionMicrophone.h"
 #import "GMPermissionPhoto.h"
+#import "ZLPermissionReminders.h"
 
 FOUNDATION_EXPORT double ZLPermissionVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZLPermissionVersionString[];

@@ -104,7 +104,7 @@
 }
 - (void)permissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
                       failure:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))failure{
-    BOOL isFirstRequest = YES;
+    BOOL isFirstRequest = [self getPermissionStatus] == ZLBluetoothCapabilityNotDetermined;
     __block NSObject* observer;
     observer = [NSNotificationCenter.defaultCenter addObserverForName:kBluetoothFinishedNotification object:self.bluetoothMonitor queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull notification) {
         [NSNotificationCenter.defaultCenter removeObserver:observer];

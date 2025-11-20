@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLMicrophonePermissionProtocol>)microphone;
 + (id<ZLLocationPermissionProtocol>)location;
 + (id<ZLBluetoothPermissionProtocol>)bluetooth;
++ (id<ZLEventPermissionProtocol>)calendar;
++ (id<ZLEventPermissionProtocol>)reminders;
 
 
 + (void)requestPermissionWithType:(ZLPermissionType)type success:(ZLSuccessCallback)success
