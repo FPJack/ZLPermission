@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLPhotoPermissionProtocol>)photo;
 + (id<ZLMicrophonePermissionProtocol>)microphone;
 + (id<ZLLocationPermissionProtocol>)location;
++ (id<ZLBluetoothPermissionProtocol>)bluetooth;
 
 
 + (void)requestPermissionWithType:(ZLPermissionType)type success:(ZLSuccessCallback)success

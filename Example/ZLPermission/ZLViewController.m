@@ -24,14 +24,18 @@
 //    [self requestPhotoPermission];
 //    [self requestMicrophonePermission];
 //    [self requestLocationPermission];
+     [self requestBluetoothPermission];
+    [self requestBluetoothPermission];
+
+}
+- (void)requestBluetoothPermission {
+    [ZLPermission.bluetooth requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestLocationPermission {
     [ZLPermission.location requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestMicrophonePermission {
-    // 示例代码，如有需要可自行实现
     [ZLPermission.microphone requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
-
 }
 - (void)requestCameraPermission {
     [ZLPermission.camera requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
@@ -56,6 +60,7 @@
         @(ZLPermissionTypePhoto):@"相册",
         @(ZLPermissionTypeMicrophone):@"麦克风",
         @(ZLPermissionTypeLocation):@"定位",
+        @(ZLPermissionTypeBluetooth):@"蓝牙",
     };
     return dic[@(type)];
 }

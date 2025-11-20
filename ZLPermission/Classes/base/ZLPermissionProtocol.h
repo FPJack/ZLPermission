@@ -61,6 +61,20 @@ typedef NS_ENUM(NSInteger,ZLLocationAuthorizationStatus)
     ZLLocationAuthorizationStatusWhenInUse,
 };
 
+///蓝牙
+typedef NS_OPTIONS(NSInteger, ZLBluetoothCapabilities) {
+    ZLBluetoothCapabilityNotDetermined          = 0, /// 未决定
+    ZLBluetoothCapabilityRestricted       = 1 << 0, /// 受限
+    ZLBluetoothCapabilityDenied    = 1 << 1, /// 拒绝
+    ZLBluetoothCapabilityAllowedAlways   = 1 << 2, /// 永远允许
+    ZLBluetoothCapabilityUnknown     = 1 << 3, /// 未知
+    ZLBluetoothCapabilityResetting    = 1 << 4, /// 重置中
+    ZLBluetoothCapabilityUnsupported    = 1 << 5,/// 不支持
+    ZLBluetoothCapabilityUnauthorized    = 1 << 6,/// 未授权
+    ZLBluetoothCapabilityPoweredOff    = 1 << 7,/// 系统已关闭
+    ZLBluetoothCapabilityPoweredOn    = 1 << 8,/// 系统已开启
+};
+
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureCallback)(BOOL isFirst,NSInteger status);
@@ -135,6 +149,25 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
                              failure:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))failure;
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status,ZLPermissionType type))failure;
+@end
+
+
+@protocol ZLBluetoothPermissionProtocol <ZLPermissionProtocol>
+@required
+
++ (id<ZLBluetoothPermissionProtocol> )share;
+
+- (ZLBluetoothCapabilities)getPermissionStatus;
+
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
+                             failure:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))failure;
+
+///系统权限关闭时，弹出系统窗口提示去设置开启蓝牙权限
+- (void)requestPermissionShowPowerAlertWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
+                                           failure:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))failure;
+
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 NS_ASSUME_NONNULL_END
