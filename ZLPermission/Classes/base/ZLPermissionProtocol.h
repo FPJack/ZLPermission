@@ -44,6 +44,13 @@ typedef NS_ENUM(NSInteger,ZLPhotoAuthorizationStatus)
     ZLPhotoAuthorizationStatusLimited
 };
 
+typedef NS_ENUM(NSInteger,ZLMicrophoneAuthorizationStatus)
+{
+    ZLMicrophoneAuthorizationStatusNotDetermined = 0,
+    ZLMicrophoneAuthorizationStatusDenied,
+    ZLMicrophoneAuthorizationStatusAuthorized
+};
+
 
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
@@ -100,6 +107,18 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 /// 仅请求写权限
 - (void)requestOnlyWritePermissionWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
                                       failure:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))failure;
+@end
+
+
+
+@protocol ZLMicrophonePermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLMicrophonePermissionProtocol> )share;
+- (ZLMicrophoneAuthorizationStatus)getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 

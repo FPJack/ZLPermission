@@ -13,6 +13,7 @@
 #import "ZLPermission.h"
 #import "ZLPermissionProtocol.h"
 #import "ZLPermissionCamera.h"
+#import "ZLPermissionMicrophone.h"
 #import "GMPermissionPhoto.h"
 
 FOUNDATION_EXPORT double ZLPermissionVersionNumber;

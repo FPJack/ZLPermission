@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZLPermission : NSObject
 + (id<ZLCameraPermissionProtocol>)camera;
 + (id<ZLPhotoPermissionProtocol>)photo;
++ (id<ZLMicrophonePermissionProtocol>)microphone;
 
 
 + (void)requestPermissionWithType:(ZLPermissionType)type success:(ZLSuccessCallback)success
