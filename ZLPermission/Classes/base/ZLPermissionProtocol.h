@@ -61,6 +61,13 @@ typedef NS_ENUM(NSInteger,ZLLocationAuthorizationStatus)
     ZLLocationAuthorizationStatusWhenInUse,
 };
 
+typedef NS_ENUM(NSInteger,ZLHealthAuthorizationStatus)
+{
+    ZLHealthAuthorizationStatusNotDetermined = 0,
+    ZLHealthAuthorizationStatusDenied ,
+    ZLHealthAuthorizationStatusAuthorized ,
+};
+
 ///蓝牙
 typedef NS_OPTIONS(NSInteger, ZLBluetoothCapabilities) {
     ZLBluetoothCapabilityNotDetermined          = 0, /// 未决定
@@ -227,6 +234,16 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+@end
+
+@protocol ZLHealthPermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLHealthPermissionProtocol> )share;
+- (ZLHealthAuthorizationStatus)getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 

@@ -58,6 +58,18 @@
     {
       "name": "mediaLibrary",
       "source_files": "ZLPermission/Classes/mediaLibrary/**/*"
+    },
+    {
+      "name": "network",
+      "source_files": "ZLPermission/Classes/network/**/*"
+    },
+    {
+      "name": "notification",
+      "source_files": "ZLPermission/Classes/notification/**/*"
+    },
+    {
+      "name": "health",
+      "source_files": "ZLPermission/Classes/health/**/*"
     }
   ]
 }

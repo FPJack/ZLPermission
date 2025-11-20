@@ -61,7 +61,15 @@ TODO: Add long description of the pod here.
   s.subspec 'mediaLibrary' do |core|
      core.source_files = 'ZLPermission/Classes/mediaLibrary/**/*'
    end
-  
+  s.subspec 'network' do |core|
+     core.source_files = 'ZLPermission/Classes/network/**/*'
+   end
+  s.subspec 'notification' do |core|
+     core.source_files = 'ZLPermission/Classes/notification/**/*'
+   end
+  s.subspec 'health' do |core|
+     core.source_files = 'ZLPermission/Classes/health/**/*'
+   end
   
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']

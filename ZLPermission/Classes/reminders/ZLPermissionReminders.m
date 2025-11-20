@@ -72,7 +72,7 @@
 }
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirstRequest, NSInteger status) {
+    [self requestPermissionWithSuccess:success failure:^(BOOL isFirstRequest, ZLEventAuthorizationStatus status) {
         if (failure) failure(isFirstRequest,status,ZLPermissionTypeReminders);
     }];
 }
