@@ -21,17 +21,28 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/fanpeng/ZLPermission'
+  s.homepage         = 'https://github.com/FPJack/ZLPermission.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'fanpeng' => 'peng.fan@ukelink.com' }
-  s.source           = { :git => 'https://github.com/fanpeng/ZLPermission.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/FPJack/ZLPermission.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'ZLPermission/Classes/**/*'
-  
+#  s.source_files = 'ZLPermission/Classes/**/*'
+  s.subspec 'base' do |core|
+     core.source_files = 'ZLPermission/Classes/base/**/*'
+   end
+  s.subspec 'camera' do |core|
+     core.source_files = 'ZLPermission/Classes/camera/**/*'
+   end
+  s.subspec 'photo' do |core|
+     core.source_files = 'ZLPermission/Classes/photo/**/*'
+   end
+  s.subspec 'microphone' do |core|
+     core.source_files = 'ZLPermission/Classes/microphone/**/*'
+   end
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']
   # }

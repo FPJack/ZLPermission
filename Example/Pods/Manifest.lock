@@ -4,7 +4,15 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - ZLPermission (0.1.0)
+  - ZLPermission (0.1.0):
+    - ZLPermission/base (= 0.1.0)
+    - ZLPermission/camera (= 0.1.0)
+    - ZLPermission/microphone (= 0.1.0)
+    - ZLPermission/photo (= 0.1.0)
+  - ZLPermission/base (0.1.0)
+  - ZLPermission/camera (0.1.0)
+  - ZLPermission/microphone (0.1.0)
+  - ZLPermission/photo (0.1.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -20,7 +28,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ZLPermission: 09071a1e51f19421971058bba577ae78d1b4abe1
+  ZLPermission: 5ccf278aeeaef41787d412009190dbf39875a746
 
 PODFILE CHECKSUM: aad86c2bd1400847360d5f93da26bfecba3b6ccc
 

@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "ZLPermission.h"
+#import "ZLPermissionProtocol.h"
+#import "ZLPermissionCamera.h"
+#import "GMPermissionPhoto.h"
 
 FOUNDATION_EXPORT double ZLPermissionVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZLPermissionVersionString[];

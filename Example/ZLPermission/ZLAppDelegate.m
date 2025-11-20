@@ -7,12 +7,15 @@
 //
 
 #import "ZLAppDelegate.h"
-
+#import <ZLPermission/ZLPermission.h>
+#import <ZLPermission/ZLPermissionProtocol.h>
+#import <ZLPermission/ZLPermissionCamera.h>
 @implementation ZLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    
     return YES;
 }
 
