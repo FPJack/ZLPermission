@@ -52,14 +52,19 @@ typedef NS_ENUM(NSInteger,ZLMicrophoneAuthorizationStatus)
 };
 
 
+typedef NS_ENUM(NSInteger,ZLLocationAuthorizationStatus)
+{
+    ZLLocationAuthorizationStatusNotDetermined = 0,
+    ZLLocationAuthorizationStatusRestricted ,
+    ZLLocationAuthorizationStatusDenied ,
+    ZLLocationAuthorizationStatusAlways ,
+    ZLLocationAuthorizationStatusWhenInUse,
+};
+
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPermissionType type);
-
-
-
-
 
 
 
@@ -121,5 +126,15 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
+
+@protocol ZLLocationPermissionProtocol <ZLPermissionProtocol>
+@required
+- (BOOL)systemLocationServicesEnabled;
+- (ZLLocationAuthorizationStatus )getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status,ZLPermissionType type))failure;
+@end
 
 NS_ASSUME_NONNULL_END

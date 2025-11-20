@@ -62,6 +62,10 @@ static NSMutableDictionary *sharedInstances;
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionMicrophone"];
     return (id<ZLMicrophonePermissionProtocol>)[cls share];
 }
++ (id<ZLLocationPermissionProtocol>)location {
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionLocation"];
+    return (id<ZLLocationPermissionProtocol>)[cls share];
+}
 //+ (id<GMPermissionPhotoProtocol>)photo{
 //    Class<GMPermissionProtocol> cls = NSClassFromString(@"GMPermissionPhoto");
 //    if (!cls) {
@@ -193,6 +197,7 @@ static NSMutableDictionary *sharedInstances;
             impl = [self camera];
             break;
         case ZLPermissionTypeLocation:
+            impl = [self location];
             break;
         case ZLPermissionTypeMicrophone:
             impl = [self microphone];

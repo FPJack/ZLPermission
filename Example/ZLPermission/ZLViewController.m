@@ -20,11 +20,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self requestCameraPermission];
-    [self requestPhotoPermission];
-    [self requestMicrophonePermission];
+//    [self requestCameraPermission];
+//    [self requestPhotoPermission];
+//    [self requestMicrophonePermission];
+//    [self requestLocationPermission];
 }
-
+- (void)requestLocationPermission {
+    [ZLPermission.location requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+}
 - (void)requestMicrophonePermission {
     // 示例代码，如有需要可自行实现
     [ZLPermission.microphone requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
@@ -52,6 +55,7 @@
         @(ZLPermissionTypeCamera):@"相机",
         @(ZLPermissionTypePhoto):@"相册",
         @(ZLPermissionTypeMicrophone):@"麦克风",
+        @(ZLPermissionTypeLocation):@"定位",
     };
     return dic[@(type)];
 }

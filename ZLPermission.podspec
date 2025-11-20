@@ -43,6 +43,12 @@ TODO: Add long description of the pod here.
   s.subspec 'microphone' do |core|
      core.source_files = 'ZLPermission/Classes/microphone/**/*'
    end
+  s.subspec 'location' do |core|
+     core.source_files = 'ZLPermission/Classes/location/**/*'
+   end
+  s.subspec 'bluetooth' do |core|
+     core.source_files = 'ZLPermission/Classes/bluetooth/**/*'
+   end
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']
   # }
