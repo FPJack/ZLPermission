@@ -42,12 +42,20 @@
         case ZLEventAuthorizationStatusNotDetermined:
         {
             EKEventStore *eventStore = [[EKEventStore alloc] init];
-            [eventStore requestAccessToEntityType:EKEntityTypeReminder
-                                       completion:^(BOOL granted, NSError *error) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (success) success(YES,[self getPermissionStatus]);
-                });
-            }];
+            if (@available(iOS 17.0, *)) {
+                [eventStore requestFullAccessToRemindersWithCompletion:^(BOOL granted, NSError * _Nullable error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (success) success(YES,[self getPermissionStatus]);
+                    });
+                }];
+            } else {
+                [eventStore requestAccessToEntityType:EKEntityTypeReminder
+                                           completion:^(BOOL granted, NSError *error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (success) success(YES,[self getPermissionStatus]);
+                    });
+                }];
+            }
         }
             break;
         case ZLEventAuthorizationStatusRestricted:

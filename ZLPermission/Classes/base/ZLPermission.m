@@ -74,9 +74,9 @@ static NSMutableDictionary *sharedInstances;
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionCalendar"];
     return (id<ZLEventPermissionProtocol>)[cls share];
 }
-+ (id<ZLEventPermissionProtocol>)reminders {
++ (id<ZLRemindersPermissionProtocol>)reminders {
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionReminders"];
-    return (id<ZLEventPermissionProtocol>)[cls share];
+    return (id<ZLRemindersPermissionProtocol>)[cls share];
 }
 //+ (id<GMPermissionPhotoProtocol>)photo{
 //    Class<GMPermissionProtocol> cls = NSClassFromString(@"GMPermissionPhoto");

@@ -32,6 +32,36 @@
 - (ZLEventAuthorizationStatus)getPermissionStatus {
     return [self parseStatus:[EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent]];
 }
+- (void)requestWriteOnlyPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+                                      failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure API_AVAILABLE(ios(17.0)){
+    ZLEventAuthorizationStatus status = [self getPermissionStatus];
+    switch (status) {
+        case ZLEventAuthorizationStatusFullAccess: {
+            if (success) success(NO,status);
+        } break;
+        case ZLEventAuthorizationStatusNotDetermined:
+        {
+            EKEventStore *eventStore = [[EKEventStore alloc] init];
+            [eventStore requestWriteOnlyAccessToEventsWithCompletion:^(BOOL granted, NSError * _Nullable error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) success(YES,[self getPermissionStatus]);
+                });
+            }];
+        }
+            break;
+        case ZLEventAuthorizationStatusRestricted:
+        case ZLEventAuthorizationStatusDenied: {
+            if (failure) failure(NO,status);
+        }
+            break;
+        case ZLEventAuthorizationStatusWriteOnly:{
+            if (success) success(NO,status);
+        }
+            
+            break;
+    }
+    
+}
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure {
     ZLEventAuthorizationStatus status = [self getPermissionStatus];
@@ -42,12 +72,20 @@
         case ZLEventAuthorizationStatusNotDetermined:
         {
             EKEventStore *eventStore = [[EKEventStore alloc] init];
-            [eventStore requestAccessToEntityType:EKEntityTypeEvent
-                                       completion:^(BOOL granted, NSError *error) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (success) success(YES,[self getPermissionStatus]);
-                });
-            }];
+            if (@available(iOS 17.0, *)) {
+                [eventStore requestFullAccessToEventsWithCompletion:^(BOOL granted, NSError * _Nullable error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (success) success(YES,[self getPermissionStatus]);
+                    });
+                }];
+            } else {
+                [eventStore requestAccessToEntityType:EKEntityTypeEvent
+                                           completion:^(BOOL granted, NSError *error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (success) success(YES,[self getPermissionStatus]);
+                    });
+                }];
+            }
         }
             break;
         case ZLEventAuthorizationStatusRestricted:

@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLLocationPermissionProtocol>)location;
 + (id<ZLBluetoothPermissionProtocol>)bluetooth;
 + (id<ZLEventPermissionProtocol>)calendar;
-+ (id<ZLEventPermissionProtocol>)reminders;
++ (id<ZLRemindersPermissionProtocol>)reminders;
 
 
 + (void)requestPermissionWithType:(ZLPermissionType)type success:(ZLSuccessCallback)success

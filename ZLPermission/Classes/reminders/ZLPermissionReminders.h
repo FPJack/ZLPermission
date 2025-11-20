@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZLPermissionReminders : ZLBaseImpl<ZLEventPermissionProtocol>
+@interface ZLPermissionReminders : ZLBaseImpl<ZLRemindersPermissionProtocol>
 
 @end
 

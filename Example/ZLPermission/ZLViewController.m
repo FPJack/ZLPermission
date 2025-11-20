@@ -24,8 +24,9 @@
 //    [self requestPhotoPermission];
 //    [self requestMicrophonePermission];
 //    [self requestLocationPermission];
-    [self requestCalendarPermission];
-    [self requestRemindersPermission];
+//    [self requestCalendarPermission];
+//    [self requestRemindersPermission];
+    
     
 }
 - (void)requestRemindersPermission {

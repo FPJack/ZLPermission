@@ -130,7 +130,7 @@
     return self.getOnlyWritePermissionStatus == ZLPhotoAuthorizationStatusAuthorized || self.getOnlyWritePermissionStatus == ZLPhotoAuthorizationStatusLimited;
 }
 
-- (void)requestOnlyWritePermissionWithSuccess:(nonnull void (^)(BOOL, ZLPhotoAuthorizationStatus))success failure:(nonnull void (^)(BOOL, ZLPhotoAuthorizationStatus))failure { 
+- (void)requestWriteOnlyPermissionWithSuccess:(nonnull void (^)(BOOL, ZLPhotoAuthorizationStatus))success failure:(nonnull void (^)(BOOL, ZLPhotoAuthorizationStatus))failure { 
     [self requestPermissionReadWrite:NO success:success failure:failure];
 }
 
