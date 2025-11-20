@@ -82,6 +82,10 @@ static NSMutableDictionary *sharedInstances;
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionTracking"];
     return (id<ZLTrackingPermissionProtocol>)[cls share];
 }
++ (id<ZLMediaLibraryPermissionProtocol>)mediaLibrary {
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionMediaLibrary"];
+    return (id<ZLMediaLibraryPermissionProtocol>)[cls share];
+}
 //+ (id<GMPermissionPhotoProtocol>)photo{
 //    Class<GMPermissionProtocol> cls = NSClassFromString(@"GMPermissionPhoto");
 //    if (!cls) {
@@ -224,6 +228,7 @@ static NSMutableDictionary *sharedInstances;
             impl = [self bluetooth];
             break;
         case ZLPermissionTypeMediaLibrary:
+            impl = [self mediaLibrary];
             break;
         case ZLPermissionTypeCalendar:
             impl = [self calendar];

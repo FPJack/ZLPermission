@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLEventPermissionProtocol>)calendar;
 + (id<ZLRemindersPermissionProtocol>)reminders;
 + (id<ZLTrackingPermissionProtocol>)tracking;
++ (id<ZLMediaLibraryPermissionProtocol>)mediaLibrary;
 
 
 + (void)requestPermissionWithType:(ZLPermissionType)type success:(ZLSuccessCallback)success

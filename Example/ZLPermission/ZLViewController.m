@@ -26,10 +26,14 @@
 //    [self requestLocationPermission];
 //    [self requestCalendarPermission];
 //    [self requestRemindersPermission];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self requestTrackingPermission];
-    });
+    [self requestMediaLibraryPermission];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self requestTrackingPermission];
+//    });
     
+}
+- (void)requestMediaLibraryPermission {
+    [ZLPermission.mediaLibrary requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestTrackingPermission {
     [ZLPermission.tracking requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];

@@ -10,6 +10,7 @@ PODS:
     - ZLPermission/calendar (= 0.1.0)
     - ZLPermission/camera (= 0.1.0)
     - ZLPermission/location (= 0.1.0)
+    - ZLPermission/mediaLibrary (= 0.1.0)
     - ZLPermission/microphone (= 0.1.0)
     - ZLPermission/photo (= 0.1.0)
     - ZLPermission/reminders (= 0.1.0)
@@ -19,6 +20,7 @@ PODS:
   - ZLPermission/calendar (0.1.0)
   - ZLPermission/camera (0.1.0)
   - ZLPermission/location (0.1.0)
+  - ZLPermission/mediaLibrary (0.1.0)
   - ZLPermission/microphone (0.1.0)
   - ZLPermission/photo (0.1.0)
   - ZLPermission/reminders (0.1.0)
@@ -38,7 +40,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ZLPermission: e031bd958807da37fa263741923bc9aab1466cd9
+  ZLPermission: cb095573947da36f51c43c4b95189a06a2a0336c
 
 PODFILE CHECKSUM: aad86c2bd1400847360d5f93da26bfecba3b6ccc
 

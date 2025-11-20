@@ -47,7 +47,7 @@
                             if (success) success(YES,[self parseStatus:status]);
                         }
                         else if (status == ATTrackingManagerAuthorizationStatusNotDetermined) {
-                            NSLog(@"延迟调用才能正确弹窗");
+                            NSLog(@"app 启动的时候延迟调用才能正确弹窗");
                             if (failure) failure(YES,[self parseStatus:status]);
                         }else {
                             if (failure) failure(YES,[self parseStatus:status]);

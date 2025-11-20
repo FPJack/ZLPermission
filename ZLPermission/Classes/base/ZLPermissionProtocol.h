@@ -220,4 +220,14 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
+@protocol ZLMediaLibraryPermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLMediaLibraryPermissionProtocol> )share;
+- (ZLAuthorizationStatus)getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+@end
+
 NS_ASSUME_NONNULL_END

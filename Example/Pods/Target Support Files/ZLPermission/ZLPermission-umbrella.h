@@ -16,6 +16,7 @@
 #import "ZLPermissionCalendar.h"
 #import "ZLPermissionCamera.h"
 #import "ZLPermissionLocation.h"
+#import "ZLPermissionMediaLibrary.h"
 #import "ZLPermissionMicrophone.h"
 #import "GMPermissionPhoto.h"
 #import "ZLPermissionReminders.h"
