@@ -26,8 +26,13 @@
 //    [self requestLocationPermission];
 //    [self requestCalendarPermission];
 //    [self requestRemindersPermission];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self requestTrackingPermission];
+    });
     
-    
+}
+- (void)requestTrackingPermission {
+    [ZLPermission.tracking requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestRemindersPermission {
     [ZLPermission.reminders requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
@@ -72,6 +77,10 @@
         @(ZLPermissionTypeMediaLibrary):@"媒体资料库",
         @(ZLPermissionTypeCalendar):@"日历",
         @(ZLPermissionTypeReminders):@"提醒事项",
+        @(ZLPermissionTypeHealth):@"健康",
+        @(ZLPermissionTypeContacts):@"通讯录",
+        @(ZLPermissionTypeNetwork):@"网络",
+        @(ZLPermissionTypeTracking):@"跟踪"
     };
     return dic[@(type)];
 }

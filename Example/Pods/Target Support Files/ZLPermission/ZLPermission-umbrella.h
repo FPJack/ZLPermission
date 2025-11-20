@@ -19,6 +19,7 @@
 #import "ZLPermissionMicrophone.h"
 #import "GMPermissionPhoto.h"
 #import "ZLPermissionReminders.h"
+#import "ZLPermissionTracking.h"
 
 FOUNDATION_EXPORT double ZLPermissionVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZLPermissionVersionString[];

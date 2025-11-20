@@ -55,6 +55,9 @@ TODO: Add long description of the pod here.
   s.subspec 'reminders' do |core|
      core.source_files = 'ZLPermission/Classes/reminders/**/*'
    end
+  s.subspec 'tracking' do |core|
+     core.source_files = 'ZLPermission/Classes/tracking/**/*'
+   end
   
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']

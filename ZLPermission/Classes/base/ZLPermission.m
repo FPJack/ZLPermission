@@ -78,6 +78,10 @@ static NSMutableDictionary *sharedInstances;
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionReminders"];
     return (id<ZLRemindersPermissionProtocol>)[cls share];
 }
++ (id<ZLTrackingPermissionProtocol>)tracking {
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionTracking"];
+    return (id<ZLTrackingPermissionProtocol>)[cls share];
+}
 //+ (id<GMPermissionPhotoProtocol>)photo{
 //    Class<GMPermissionProtocol> cls = NSClassFromString(@"GMPermissionPhoto");
 //    if (!cls) {
@@ -234,6 +238,7 @@ static NSMutableDictionary *sharedInstances;
         case ZLPermissionTypeNetwork:
             break;
         case ZLPermissionTypeTracking:
+            impl = [self tracking];
             break;
         default:
             break;

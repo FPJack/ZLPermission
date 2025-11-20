@@ -50,6 +50,10 @@
     {
       "name": "reminders",
       "source_files": "ZLPermission/Classes/reminders/**/*"
+    },
+    {
+      "name": "tracking",
+      "source_files": "ZLPermission/Classes/tracking/**/*"
     }
   ]
 }
