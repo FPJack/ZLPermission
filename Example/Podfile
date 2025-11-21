@@ -4,20 +4,7 @@ platform :ios, '10.0'
 
 target 'ZLPermission_Example' do
   pod 'ZLPermission', :path => '../'
-#  pod 'ISHPermissionKit/Motion'
-#    pod 'ISHPermissionKit/Health'
-#    pod 'ISHPermissionKit/Location'
-#    pod 'ISHPermissionKit/Microphone'
-#    pod 'ISHPermissionKit/PhotoLibrary'
-#    pod 'ISHPermissionKit/Camera'
-#    pod 'ISHPermissionKit/Notifications'
-#    pod 'ISHPermissionKit/SocialAccounts'
-#    pod 'ISHPermissionKit/Contacts'
-#    pod 'ISHPermissionKit/Calendar'
-#    pod 'ISHPermissionKit/Reminders'
-#    pod 'ISHPermissionKit/Siri'
-#    pod 'ISHPermissionKit/Speech'
-#    pod 'ISHPermissionKit/MusicLibrary'
+#  pod 'ISHPermissionKit'
   target 'ZLPermission_Tests' do
     inherit! :search_paths
 

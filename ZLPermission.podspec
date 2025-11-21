@@ -29,6 +29,7 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
+  s.resource_bundles = {'ZLPermission_Rrivacy' => ['ZLPermission/Resources/PrivacyInfo.xcprivacy']}
 
 #  s.source_files = 'ZLPermission/Classes/**/*'
   s.subspec 'base' do |core|

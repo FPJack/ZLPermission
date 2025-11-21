@@ -10,6 +10,7 @@
 #import <ZLPermission/ZLPermission.h>
 #import <ZLPermission/ZLPermissionProtocol.h>
 #import <ZLPermission/ZLPermissionCamera.h>
+#import <CoreMotion/CoreMotion.h>
 @interface ZLViewController ()
 
 @end
@@ -19,6 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CMErrorMotionActivityNotAuthorized;
 	// Do any additional setup after loading the view, typically from a nib.
 //    [self requestCameraPermission];
 //    [self requestPhotoPermission];
