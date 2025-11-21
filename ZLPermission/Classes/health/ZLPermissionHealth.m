@@ -51,9 +51,21 @@
         if (failure) failure(YES, self.getPermissionStatus);
         return;
     }
-    NSMutableSet *readTypes = [NSMutableSet set];
-    NSMutableSet *writeTypes = [NSMutableSet set];
+//    NSMutableSet *readTypes = [NSMutableSet set];
+//    NSMutableSet *writeTypes = [NSMutableSet set];
     HKHealthStore *healthStore = [[HKHealthStore alloc] init];
+    
+    // 读取权限
+    NSSet *readTypes = [NSSet setWithObjects:
+                        [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount],   // 步数
+                        [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight],      // 身高
+                        nil];
+
+    // 写入权限
+    NSSet *writeTypes = [NSSet setWithObjects:
+                         [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass],  // 体重
+                         nil];
+    
     NSMutableSet *allTypes = [NSMutableSet set];
     [allTypes unionSet:readTypes];
     [allTypes unionSet:writeTypes];

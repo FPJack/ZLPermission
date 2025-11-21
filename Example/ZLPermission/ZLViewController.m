@@ -26,11 +26,15 @@
 //    [self requestLocationPermission];
 //    [self requestCalendarPermission];
 //    [self requestRemindersPermission];
-    [self requestMediaLibraryPermission];
+//    [self requestMediaLibraryPermission];
+//     [self requestHealthPermission];
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self requestTrackingPermission];
 //    });
     
+}
+- (void)requestHealthPermission {
+    [ZLPermission.health requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestMediaLibraryPermission {
     [ZLPermission.mediaLibrary requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
