@@ -137,17 +137,5 @@
         }
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, ZLLocationAuthorizationStatus status) {
-        if (failure) failure(isFirst,status,ZLPermissionTypeLocation);
-    }];
-}
-- (void)requestSuccess:(void (^)(void))success failure:(void (^)(void))failure {
-    [self requestPermissionWithSuccess:^(BOOL isFirst, ZLLocationAuthorizationStatus status) {
-        if (success) success();
-    } failure:^(BOOL isFirst, ZLLocationAuthorizationStatus status) {
-        if (failure) failure();
-    }];
-}
+
 @end

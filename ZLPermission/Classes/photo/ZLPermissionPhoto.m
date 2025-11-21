@@ -1,14 +1,14 @@
 //
-//  GMPermissionPhoto.m
+//  ZLPermissionPhoto.m
 //  ZLPermission
 //
 //  Created by admin on 2025/11/20.
 //
 
-#import "GMPermissionPhoto.h"
+#import "ZLPermissionPhoto.h"
 #import <Photos/Photos.h>
 
-@implementation GMPermissionPhoto
+@implementation ZLPermissionPhoto
 - (ZLPhotoAuthorizationStatus)parseStatus:(PHAuthorizationStatus)status {
     switch(status){
         case PHAuthorizationStatusNotDetermined:
@@ -101,20 +101,7 @@
                              failure:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))failure{
     [self requestPermissionReadWrite:YES success:success failure:failure];
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, ZLPhotoAuthorizationStatus status) {
-        if (failure) failure(isFirst,status,ZLPermissionTypePhoto);
-    }];
-}
 
-- (void)requestSuccess:(nonnull void (^)(void))success failure:(nonnull void (^)(void))failure { 
-    [self requestPermissionWithSuccess:^(BOOL isFirst, ZLPhotoAuthorizationStatus status) {
-        if(success) success();
-    } failure:^(BOOL isFirst, ZLPhotoAuthorizationStatus status) {
-        if (failure) failure();
-    }];
-}
 - (ZLPhotoAuthorizationStatus)getOnlyWritePermissionStatus { 
     if (@available(iOS 14.0, *)) {
         return [self parseStatus:[PHPhotoLibrary authorizationStatusForAccessLevel:PHAccessLevelAddOnly]];

@@ -81,10 +81,5 @@
         if (failure) failure(NO,status);
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure {
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, ZLNotificationAuthorizationStatus status) {
-        if (failure) failure(isFirst, status, ZLPermissionTypeNotification);
-    }];
-}
+
 @end

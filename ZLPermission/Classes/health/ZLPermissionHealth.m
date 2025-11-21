@@ -109,11 +109,5 @@
         if (failure) failure(isFirstRequest,status,ZLPermissionTypeHealth);
     }];
 }
-- (void)requestSuccess:(void (^)(void))success failure:(void (^)(void))failure {
-    [self requestPermissionWithSuccess:^(BOOL isFirst, ZLHealthAuthorizationStatus status) {
-        if (success) success();
-    } failure:^(BOOL isFirst, ZLHealthAuthorizationStatus status) {
-        if (failure) failure();
-    }];
-}
+
 @end

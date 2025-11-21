@@ -1,5 +1,5 @@
 //
-//  GMPermissionPhoto.h
+//  ZLPermissionPhoto.h
 //  ZLPermission
 //
 //  Created by admin on 2025/11/20.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GMPermissionPhoto : ZLBaseImpl<ZLPhotoPermissionProtocol>
+@interface ZLPermissionPhoto : ZLBaseImpl<ZLPhotoPermissionProtocol>
 
 @end
 

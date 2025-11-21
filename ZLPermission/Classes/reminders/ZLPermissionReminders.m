@@ -70,17 +70,5 @@
             break;
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirstRequest, ZLEventAuthorizationStatus status) {
-        if (failure) failure(isFirstRequest,status,ZLPermissionTypeReminders);
-    }];
-}
-- (void)requestSuccess:(void (^)(void))success failure:(void (^)(void))failure {
-    [self requestPermissionWithSuccess:^(BOOL isFirst, ZLEventAuthorizationStatus status) {
-        if (success) success();
-    } failure:^(BOOL isFirst, ZLEventAuthorizationStatus status) {
-        if (failure) failure();
-    }];
-}
+
 @end

@@ -68,17 +68,5 @@
             if (success) success(YES,[self getPermissionStatus]);
         }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, NSInteger status) {
-        if (failure) failure(isFirst,status,ZLPermissionTypeCamera);
-    }];
-}
-- (void)requestSuccess:(void (^)(void))success failure:(void (^)(void))failure{
-    [self requestPermissionWithSuccess:^(BOOL isFirst, NSInteger status) {
-        if (success) success();
-    } failure:^(BOOL isFirst, NSInteger status) {
-        if (failure) failure();
-    }];
-}
+
 @end

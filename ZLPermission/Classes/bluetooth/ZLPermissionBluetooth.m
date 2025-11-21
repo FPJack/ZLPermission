@@ -166,17 +166,4 @@
     _bluetoothMonitor = nil;
     _showAlertbluetoothMonitor = nil;
 }
-- (void)requestSuccess:(void (^)(void))success failure:(void (^)(void))failure {
-    [self requestPermissionWithSuccess:^(BOOL isFirst, ZLBluetoothCapabilities status) {
-        if (success) success();
-    } failure:^(BOOL isFirst, ZLBluetoothCapabilities status) {
-        if (failure) failure();
-    }];
-}
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, ZLBluetoothCapabilities status) {
-        if (failure) failure(isFirst,status,ZLPermissionTypeBluetooth);
-    }];
-}
 @end

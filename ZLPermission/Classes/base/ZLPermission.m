@@ -7,6 +7,7 @@
 
 #import "ZLPermission.h"
 static NSMutableDictionary *sharedInstances;
+static NSDictionary *permissionClassMap;
 @implementation ZLBaseImpl
 
 - (NSInteger)getPermissionStatus {
@@ -32,7 +33,30 @@ static NSMutableDictionary *sharedInstances;
         return instance;
     }
 }
-- (void)requestPermissionWithSuccess:(nonnull ZLSuccessCallback)success failureWithType:(nonnull ZLFailureTypeCallback)failure {
+- (void)requestPermissionWithSuccess:(ZLSuccessCallback)success failureWithType:(ZLFailureTypeCallback)failure {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        permissionClassMap = @{
+            @"ZLPermissionCamera": @(ZLPermissionTypeCamera),
+            @"ZLPermissionPhoto": @(ZLPermissionTypePhoto),
+            @"ZLPermissionMicrophone": @(ZLPermissionTypeMicrophone),
+            @"ZLPermissionLocation": @(ZLPermissionTypeLocation),
+            @"ZLPermissionBluetooth": @(ZLPermissionTypeBluetooth),
+            @"ZLPermissionCalendar": @(ZLPermissionTypeCalendar),
+            @"ZLPermissionReminders": @(ZLPermissionTypeReminders),
+            @"ZLPermissionTracking": @(ZLPermissionTypeTracking),
+            @"ZLPermissionMediaLibrary": @(ZLPermissionTypeMediaLibrary),
+            @"ZLPermissionHealth": @(ZLPermissionTypeHealth),
+            @"ZLPermissionNotification": @(ZLPermissionTypeNotification),
+            @"ZLPermissionContacts": @(ZLPermissionTypeContacts),
+            @"ZLPermissionSiri": @(ZLPermissionTypeSiri),
+            @"ZLPermissionSpeechRecognition": @(ZLPermissionTypeSpeechRecognizer),
+        };
+    });
+    NSNumber *typeNum = permissionClassMap[NSStringFromClass([self class])];
+    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, NSInteger status) {
+        if (failure) failure(isFirst,status,typeNum.integerValue);
+    }];
 }
 - (void)requestSuccess:(nonnull void (^)(void))success failure:(nonnull void (^)(void))failure {
     [self requestPermissionWithSuccess:^(BOOL isFirst, NSInteger status) {
@@ -60,7 +84,7 @@ static NSMutableDictionary *sharedInstances;
     return (id<ZLCameraPermissionProtocol>)[cls share];
 }
 + (id<ZLPhotoPermissionProtocol>)photo {
-    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"GMPermissionPhoto"];
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionPhoto"];
     return (id<ZLPhotoPermissionProtocol>)[cls share];
 }
 + (id<ZLMicrophonePermissionProtocol>)microphone {

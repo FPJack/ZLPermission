@@ -52,11 +52,6 @@
         if (failure) failure(NO,status);
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, ZLSiriAuthorizationStatus status) {
-        if (failure) failure(isFirst,status,ZLPermissionTypeSiri);
-    }];
-}
+
 
 @end

@@ -21,7 +21,7 @@
 #import "ZLPermissionMediaLibrary.h"
 #import "ZLPermissionMicrophone.h"
 #import "ZLPermissionNotification.h"
-#import "GMPermissionPhoto.h"
+#import "ZLPermissionPhoto.h"
 #import "ZLPermissionReminders.h"
 #import "ZLPermissionSiri.h"
 #import "ZLPermissionSpeechRecognition.h"

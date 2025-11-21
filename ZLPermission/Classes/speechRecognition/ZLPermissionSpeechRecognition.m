@@ -52,10 +52,5 @@
         if (failure) failure(NO,status);
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status) {
-        if (failure) failure(isFirst,status,ZLPermissionTypeSpeechRecognizer);
-    }];
-}
+
 @end

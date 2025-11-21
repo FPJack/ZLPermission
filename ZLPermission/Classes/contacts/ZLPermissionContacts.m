@@ -67,10 +67,5 @@
             break;
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure{
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, ZLContactsAuthorizationStatus status) {
-        if (failure) failure(isFirst,status,ZLPermissionTypeContacts);
-    }];
-}
+
 @end
