@@ -101,6 +101,15 @@ typedef NS_ENUM(NSInteger,ZLNotificationAuthorizationStatus)
     ZLNotificationAuthorizationStatusEphemeral
 };
 
+typedef NS_ENUM(NSInteger,ZLContactsAuthorizationStatus)
+{
+    ZLContactsAuthorizationStatusNotDetermined = 0,
+    ZLContactsAuthorizationStatusDenied,
+    ZLContactsAuthorizationStatusRestricted,
+    ZLContactsAuthorizationStatusAuthorized,
+    ZLContactsAuthorizationStatusLimited,
+};
+
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPermissionType type);
@@ -263,6 +272,16 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))failure;
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+@end
+
+@protocol ZLContactsPermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLContactsPermissionProtocol> )share;
+- (ZLContactsAuthorizationStatus)getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 

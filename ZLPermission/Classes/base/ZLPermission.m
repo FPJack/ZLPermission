@@ -94,6 +94,10 @@ static NSMutableDictionary *sharedInstances;
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionNotification"];
     return (id<ZLNotificationPermissionProtocol>)[cls share];
 }
++ (id<ZLContactsPermissionProtocol>)contacts {
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionContacts"];
+    return (id<ZLContactsPermissionProtocol>)[cls share];
+}
 //+ (id<GMPermissionPhotoProtocol>)photo{
 //    Class<GMPermissionProtocol> cls = NSClassFromString(@"GMPermissionPhoto");
 //    if (!cls) {

@@ -70,6 +70,9 @@ TODO: Add long description of the pod here.
   s.subspec 'health' do |core|
      core.source_files = 'ZLPermission/Classes/health/**/*'
    end
+  s.subspec 'contacts' do |core|
+     core.source_files = 'ZLPermission/Classes/contacts/**/*'
+   end
   
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']

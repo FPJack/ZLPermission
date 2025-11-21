@@ -32,8 +32,12 @@
 //        [self requestTrackingPermission];
 //    });
 //    [self requestHealthPermission];
-    [self requestNotificationPermission];
+//    [self requestNotificationPermission];
+    [self requestContactsPermission];
     
+}
+- (void)requestContactsPermission {
+    [ZLPermission.contacts requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestNotificationPermission {
     [ZLPermission.notification requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
