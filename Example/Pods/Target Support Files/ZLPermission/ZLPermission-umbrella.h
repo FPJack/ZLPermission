@@ -16,6 +16,7 @@
 #import "ZLPermissionCalendar.h"
 #import "ZLPermissionCamera.h"
 #import "ZLPermissionContacts.h"
+#import "ZLHKRes.h"
 #import "ZLPermissionHealth.h"
 #import "ZLPermissionLocation.h"
 #import "ZLPermissionMediaLibrary.h"

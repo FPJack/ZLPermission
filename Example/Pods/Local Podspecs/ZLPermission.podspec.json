@@ -1,6 +1,6 @@
 {
   "name": "ZLPermission",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "A short description of ZLPermission.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/FPJack/ZLPermission.git",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/FPJack/ZLPermission.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "10.0"
@@ -30,50 +30,100 @@
     },
     {
       "name": "camera",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/camera/**/*",
       "weak_frameworks": "AVFoundation"
     },
     {
       "name": "photo",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/photo/**/*",
       "weak_frameworks": "Photos"
     },
     {
       "name": "microphone",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/microphone/**/*",
       "weak_frameworks": "AVFoundation"
     },
     {
       "name": "location",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/location/**/*",
       "weak_frameworks": "CoreLocation"
     },
     {
       "name": "bluetooth",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/bluetooth/**/*",
       "weak_frameworks": "CoreBluetooth"
     },
     {
       "name": "calendar",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/calendar/**/*",
       "weak_frameworks": "EventKit"
     },
     {
       "name": "reminders",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/reminders/**/*",
       "weak_frameworks": "EventKit"
     },
     {
       "name": "tracking",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/tracking/**/*"
     },
     {
       "name": "mediaLibrary",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/mediaLibrary/**/*",
       "weak_frameworks": "MediaPlayer"
     },
     {
       "name": "notification",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/notification/**/*",
       "weak_frameworks": [
         "UIKit",
@@ -82,26 +132,51 @@
     },
     {
       "name": "health",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/health/**/*",
       "weak_frameworks": "HealthKit"
     },
     {
       "name": "contacts",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/contacts/**/*",
       "weak_frameworks": "Accounts"
     },
     {
       "name": "siri",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/siri/**/*",
       "weak_frameworks": "Intents"
     },
     {
       "name": "speechRecognition",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/speechRecognition/**/*",
       "weak_frameworks": "Speech"
     },
     {
       "name": "motion",
+      "dependencies": {
+        "ZLPermission/base": [
+
+        ]
+      },
       "source_files": "ZLPermission/Classes/motion/**/*",
       "weak_frameworks": "CoreMotion"
     }

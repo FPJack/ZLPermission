@@ -4,39 +4,54 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - ZLPermission (0.1.0):
-    - ZLPermission/base (= 0.1.0)
-    - ZLPermission/bluetooth (= 0.1.0)
-    - ZLPermission/calendar (= 0.1.0)
-    - ZLPermission/camera (= 0.1.0)
-    - ZLPermission/contacts (= 0.1.0)
-    - ZLPermission/health (= 0.1.0)
-    - ZLPermission/location (= 0.1.0)
-    - ZLPermission/mediaLibrary (= 0.1.0)
-    - ZLPermission/microphone (= 0.1.0)
-    - ZLPermission/motion (= 0.1.0)
-    - ZLPermission/notification (= 0.1.0)
-    - ZLPermission/photo (= 0.1.0)
-    - ZLPermission/reminders (= 0.1.0)
-    - ZLPermission/siri (= 0.1.0)
-    - ZLPermission/speechRecognition (= 0.1.0)
-    - ZLPermission/tracking (= 0.1.0)
-  - ZLPermission/base (0.1.0)
-  - ZLPermission/bluetooth (0.1.0)
-  - ZLPermission/calendar (0.1.0)
-  - ZLPermission/camera (0.1.0)
-  - ZLPermission/contacts (0.1.0)
-  - ZLPermission/health (0.1.0)
-  - ZLPermission/location (0.1.0)
-  - ZLPermission/mediaLibrary (0.1.0)
-  - ZLPermission/microphone (0.1.0)
-  - ZLPermission/motion (0.1.0)
-  - ZLPermission/notification (0.1.0)
-  - ZLPermission/photo (0.1.0)
-  - ZLPermission/reminders (0.1.0)
-  - ZLPermission/siri (0.1.0)
-  - ZLPermission/speechRecognition (0.1.0)
-  - ZLPermission/tracking (0.1.0)
+  - ZLPermission (0.1.2):
+    - ZLPermission/base (= 0.1.2)
+    - ZLPermission/bluetooth (= 0.1.2)
+    - ZLPermission/calendar (= 0.1.2)
+    - ZLPermission/camera (= 0.1.2)
+    - ZLPermission/contacts (= 0.1.2)
+    - ZLPermission/health (= 0.1.2)
+    - ZLPermission/location (= 0.1.2)
+    - ZLPermission/mediaLibrary (= 0.1.2)
+    - ZLPermission/microphone (= 0.1.2)
+    - ZLPermission/motion (= 0.1.2)
+    - ZLPermission/notification (= 0.1.2)
+    - ZLPermission/photo (= 0.1.2)
+    - ZLPermission/reminders (= 0.1.2)
+    - ZLPermission/siri (= 0.1.2)
+    - ZLPermission/speechRecognition (= 0.1.2)
+    - ZLPermission/tracking (= 0.1.2)
+  - ZLPermission/base (0.1.2)
+  - ZLPermission/bluetooth (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/calendar (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/camera (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/contacts (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/health (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/location (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/mediaLibrary (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/microphone (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/motion (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/notification (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/photo (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/reminders (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/siri (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/speechRecognition (0.1.2):
+    - ZLPermission/base
+  - ZLPermission/tracking (0.1.2):
+    - ZLPermission/base
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -52,7 +67,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ZLPermission: e5516284dc6e4f039d2bc830e45f785ea3e07e07
+  ZLPermission: 13d8718f9ac69eccc31e2958b1e2de444805422f
 
 PODFILE CHECKSUM: 0a41bc3daf476b553de82d1869cd88e1322c7081
 

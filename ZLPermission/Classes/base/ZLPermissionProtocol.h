@@ -7,6 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class ZLHKRes;
+
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger,ZLPermissionType)
@@ -310,6 +314,11 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
                              failure:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))failure;
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+
+
+
+
+
 @end
 
 
