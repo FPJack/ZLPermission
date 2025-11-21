@@ -27,9 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLNotificationPermissionProtocol>)notification;
 + (id<ZLContactsPermissionProtocol>)contacts;
 
-
-+ (void)requestPermissionWithType:(ZLPermissionType)type success:(ZLSuccessCallback)success
-                          failure:(ZLFailureTypeCallback)failure;
 /// 跳转去设置界面开启权限
 + (void)goToAppSystemSetting;
 /// 弹出提示框，提示用户去设置界面开启权限

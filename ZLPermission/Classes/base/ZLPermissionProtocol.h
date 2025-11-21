@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger,ZLPermissionType)
     ZLPermissionTypeContacts,
     ZLPermissionTypeNetwork,
     ZLPermissionTypeTracking,
+    ZLPermissionTypeSiri
 };
 
 
@@ -108,6 +109,13 @@ typedef NS_ENUM(NSInteger,ZLContactsAuthorizationStatus)
     ZLContactsAuthorizationStatusRestricted,
     ZLContactsAuthorizationStatusAuthorized,
     ZLContactsAuthorizationStatusLimited,
+};
+typedef NS_ENUM(NSInteger,ZLSiriAuthorizationStatus)
+{
+    ZLSiriAuthorizationStatusNotDetermined = 0,
+    ZLSiriAuthorizationStatusDenied,
+    ZLSiriAuthorizationStatusRestricted,
+    ZLSiriAuthorizationStatusAuthorized,
 };
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
@@ -282,6 +290,17 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))failure;
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+@end
+
+
+@protocol ZLSiriPermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLSiriPermissionProtocol> )share;
+- (ZLSiriAuthorizationStatus)getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 

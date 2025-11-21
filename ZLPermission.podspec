@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/FPJack/ZLPermission.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
 
 #  s.source_files = 'ZLPermission/Classes/**/*'
   s.subspec 'base' do |core|
@@ -73,7 +73,9 @@ TODO: Add long description of the pod here.
   s.subspec 'contacts' do |core|
      core.source_files = 'ZLPermission/Classes/contacts/**/*'
    end
-  
+  s.subspec 'siri' do |core|
+     core.source_files = 'ZLPermission/Classes/siri/**/*'
+   end
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']
   # }

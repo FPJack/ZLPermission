@@ -33,9 +33,11 @@
 //    });
 //    [self requestHealthPermission];
 //    [self requestNotificationPermission];
-    [self requestContactsPermission];
+//    [self requestContactsPermission];
+   
     
 }
+
 - (void)requestContactsPermission {
     [ZLPermission.contacts requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
@@ -97,7 +99,7 @@
         @(ZLPermissionTypeHealth):@"健康",
         @(ZLPermissionTypeContacts):@"通讯录",
         @(ZLPermissionTypeNetwork):@"网络",
-        @(ZLPermissionTypeTracking):@"跟踪"
+        @(ZLPermissionTypeTracking):@"跟踪",
     };
     return dic[@(type)];
 }

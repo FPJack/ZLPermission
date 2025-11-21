@@ -18,6 +18,7 @@ PODS:
     - ZLPermission/notification (= 0.1.0)
     - ZLPermission/photo (= 0.1.0)
     - ZLPermission/reminders (= 0.1.0)
+    - ZLPermission/siri (= 0.1.0)
     - ZLPermission/tracking (= 0.1.0)
   - ZLPermission/base (0.1.0)
   - ZLPermission/bluetooth (0.1.0)
@@ -32,6 +33,7 @@ PODS:
   - ZLPermission/notification (0.1.0)
   - ZLPermission/photo (0.1.0)
   - ZLPermission/reminders (0.1.0)
+  - ZLPermission/siri (0.1.0)
   - ZLPermission/tracking (0.1.0)
 
 DEPENDENCIES:
@@ -48,8 +50,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ZLPermission: 22f83424c70ce34ff124362f0dc211ead8b22b9c
+  ZLPermission: 3aa3cd5806a45803f53050e3a94878a7ed1050d8
 
-PODFILE CHECKSUM: 372dfca440006df03dbb253485e2fd6f7cac94a9
+PODFILE CHECKSUM: b6a7e5650933a442f62e2301558a920946a11afc
 
 COCOAPODS: 1.16.2

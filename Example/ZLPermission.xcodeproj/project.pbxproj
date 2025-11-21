@@ -209,7 +209,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				018C5ED10A7F73A6E3BF8D83 /* [CP] Embed Pods Frameworks */,
+				5A5D49AC82DEA7B0A7CD633D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,7 +301,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		018C5ED10A7F73A6E3BF8D83 /* [CP] Embed Pods Frameworks */ = {
+		5A5D49AC82DEA7B0A7CD633D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -523,6 +523,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZLPermission/ZLPermission-Prefix.pch";
 				INFOPLIST_FILE = "ZLPermission/ZLPermission-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fanpeng.compermission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,6 +542,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZLPermission/ZLPermission-Prefix.pch";
 				INFOPLIST_FILE = "ZLPermission/ZLPermission-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fanpeng.compermission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
