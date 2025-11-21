@@ -78,6 +78,10 @@
     {
       "name": "siri",
       "source_files": "ZLPermission/Classes/siri/**/*"
+    },
+    {
+      "name": "speechRecognition",
+      "source_files": "ZLPermission/Classes/speechRecognition/**/*"
     }
   ]
 }

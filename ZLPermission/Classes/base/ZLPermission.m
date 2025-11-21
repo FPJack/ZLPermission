@@ -103,7 +103,14 @@ static NSMutableDictionary *sharedInstances;
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionContacts"];
     return (id<ZLContactsPermissionProtocol>)[cls share];
 }
-
++ (id<ZLSiriPermissionProtocol>)siri {
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionSiri"];
+    return (id<ZLSiriPermissionProtocol>)[cls share];
+}
++ (id<ZLSpeechRecognizerPermissionProtocol>)speechRecognizer {
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionSpeechRecognition"];
+    return (id<ZLSpeechRecognizerPermissionProtocol>)[cls share];
+}
 + (void)goToAppSystemSetting {
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {

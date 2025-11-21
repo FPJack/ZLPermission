@@ -34,10 +34,16 @@
 //    [self requestHealthPermission];
 //    [self requestNotificationPermission];
 //    [self requestContactsPermission];
-   
+//    [self requestSiriPermission];
+//    [self requestSpeechRecognizerPermission];
     
 }
-
+- (void)requestSpeechRecognizerPermission {
+    [ZLPermission.speechRecognizer requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+}
+- (void)requestSiriPermission {
+    [ZLPermission.siri requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+}
 - (void)requestContactsPermission {
     [ZLPermission.contacts requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
@@ -100,6 +106,8 @@
         @(ZLPermissionTypeContacts):@"通讯录",
         @(ZLPermissionTypeNetwork):@"网络",
         @(ZLPermissionTypeTracking):@"跟踪",
+        @(ZLPermissionTypeSiri):@"Siri",
+        @(ZLPermissionTypeSpeechRecognizer):@"语音识别",
     };
     return dic[@(type)];
 }

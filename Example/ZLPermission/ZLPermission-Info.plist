@@ -56,6 +56,10 @@
 	<string>请允许访问您的相册</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>请允许访问提醒</string>
+	<key>NSSiriUsageDescription</key>
+	<string>访问siri助手</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>开启语音识别功能</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>请允许使用广告追踪</string>
 	<key>UILaunchStoryboardName</key>

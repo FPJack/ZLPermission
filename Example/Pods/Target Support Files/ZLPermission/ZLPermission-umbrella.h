@@ -24,6 +24,7 @@
 #import "GMPermissionPhoto.h"
 #import "ZLPermissionReminders.h"
 #import "ZLPermissionSiri.h"
+#import "ZLPermissionSpeechRecognition.h"
 #import "ZLPermissionTracking.h"
 
 FOUNDATION_EXPORT double ZLPermissionVersionNumber;

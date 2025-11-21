@@ -24,7 +24,8 @@ typedef NS_ENUM(NSInteger,ZLPermissionType)
     ZLPermissionTypeContacts,
     ZLPermissionTypeNetwork,
     ZLPermissionTypeTracking,
-    ZLPermissionTypeSiri
+    ZLPermissionTypeSiri,
+    ZLPermissionTypeSpeechRecognizer,
 };
 
 
@@ -117,6 +118,16 @@ typedef NS_ENUM(NSInteger,ZLSiriAuthorizationStatus)
     ZLSiriAuthorizationStatusRestricted,
     ZLSiriAuthorizationStatusAuthorized,
 };
+
+typedef NS_ENUM(NSInteger,ZLSpeechRecognizerAuthorizationStatus)
+{
+    ZLSpeechRecognizerAuthorizationStatusNotDetermined = 0,
+    ZLSpeechRecognizerAuthorizationStatusDenied,
+    ZLSpeechRecognizerAuthorizationStatusRestricted,
+    ZLSpeechRecognizerAuthorizationStatusAuthorized,
+};
+
+
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureCallback)(BOOL isFirst,NSInteger status);
@@ -301,6 +312,17 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))failure;
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+@end
+
+
+@protocol ZLSpeechRecognizerPermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLSpeechRecognizerPermissionProtocol> )share;
+- (ZLSpeechRecognizerAuthorizationStatus)getPermissionStatus;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 

@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLHealthPermissionProtocol>)health;
 + (id<ZLNotificationPermissionProtocol>)notification;
 + (id<ZLContactsPermissionProtocol>)contacts;
++ (id<ZLSiriPermissionProtocol>)siri;
++ (id<ZLSpeechRecognizerPermissionProtocol>)speechRecognizer;
 
 /// 跳转去设置界面开启权限
 + (void)goToAppSystemSetting;

@@ -76,6 +76,10 @@ TODO: Add long description of the pod here.
   s.subspec 'siri' do |core|
      core.source_files = 'ZLPermission/Classes/siri/**/*'
    end
+  s.subspec 'speechRecognition' do |core|
+     core.source_files = 'ZLPermission/Classes/speechRecognition/**/*'
+   end
+  
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']
   # }
