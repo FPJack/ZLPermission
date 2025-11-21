@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZLPermissionNotification : ZLBaseImpl
+@interface ZLPermissionNotification : ZLBaseImpl<ZLNotificationPermissionProtocol>
 
 @end
 

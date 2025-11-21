@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLTrackingPermissionProtocol>)tracking;
 + (id<ZLMediaLibraryPermissionProtocol>)mediaLibrary;
 + (id<ZLHealthPermissionProtocol>)health;
++ (id<ZLNotificationPermissionProtocol>)notification;
 
 
 + (void)requestPermissionWithType:(ZLPermissionType)type success:(ZLSuccessCallback)success

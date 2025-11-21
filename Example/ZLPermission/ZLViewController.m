@@ -31,7 +31,12 @@
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self requestTrackingPermission];
 //    });
+//    [self requestHealthPermission];
+    [self requestNotificationPermission];
     
+}
+- (void)requestNotificationPermission {
+    [ZLPermission.notification requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestHealthPermission {
     [ZLPermission.health requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
