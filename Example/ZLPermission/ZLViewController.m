@@ -37,9 +37,9 @@
 //    [self requestContactsPermission];
 //    [self requestSiriPermission];
 //    [self requestSpeechRecognizerPermission];
-    [self requestMotionPermission];
-    [self requestMotionPermission];
-    [self requestMotionPermission];
+//    [self requestMotionPermission];
+//    [self requestMotionPermission];
+//    [self requestMotionPermission];
 }
 - (void)requestMotionPermission {
     if (@available(iOS 11.0, *)) {
