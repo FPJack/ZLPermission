@@ -523,7 +523,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZLPermission/ZLPermission-Prefix.pch";
 				INFOPLIST_FILE = "ZLPermission/ZLPermission-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fanpeng.compermission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,7 +542,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZLPermission/ZLPermission-Prefix.pch";
 				INFOPLIST_FILE = "ZLPermission/ZLPermission-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fanpeng.compermission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
