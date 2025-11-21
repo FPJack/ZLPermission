@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZLPermission'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of ZLPermission.'
 
 # This description is used to generate tags and improve search results.
@@ -37,51 +37,63 @@ TODO: Add long description of the pod here.
    end
   s.subspec 'camera' do |core|
      core.source_files = 'ZLPermission/Classes/camera/**/*'
+     core.weak_framework       = 'AVFoundation'
    end
   s.subspec 'photo' do |core|
      core.source_files = 'ZLPermission/Classes/photo/**/*'
+     core.weak_framework       = 'Photos'
    end
   s.subspec 'microphone' do |core|
      core.source_files = 'ZLPermission/Classes/microphone/**/*'
+     core.weak_framework       = 'AVFoundation'
    end
   s.subspec 'location' do |core|
      core.source_files = 'ZLPermission/Classes/location/**/*'
+     core.weak_framework       = 'CoreLocation'
    end
   s.subspec 'bluetooth' do |core|
      core.source_files = 'ZLPermission/Classes/bluetooth/**/*'
+     core.weak_framework       = 'CoreBluetooth'
    end
   s.subspec 'calendar' do |core|
      core.source_files = 'ZLPermission/Classes/calendar/**/*'
+     core.weak_framework       = 'EventKit'
    end
   s.subspec 'reminders' do |core|
      core.source_files = 'ZLPermission/Classes/reminders/**/*'
+     core.weak_framework       = 'EventKit'
    end
   s.subspec 'tracking' do |core|
      core.source_files = 'ZLPermission/Classes/tracking/**/*'
    end
   s.subspec 'mediaLibrary' do |core|
      core.source_files = 'ZLPermission/Classes/mediaLibrary/**/*'
+     core.weak_framework       = 'MediaPlayer'
    end
-  s.subspec 'network' do |core|
-     core.source_files = 'ZLPermission/Classes/network/**/*'
-   end
+
   s.subspec 'notification' do |core|
      core.source_files = 'ZLPermission/Classes/notification/**/*'
+     core.weak_framework       = 'UIKit', 'UserNotifications'
    end
   s.subspec 'health' do |core|
      core.source_files = 'ZLPermission/Classes/health/**/*'
+     core.weak_framework       = 'HealthKit'
    end
   s.subspec 'contacts' do |core|
      core.source_files = 'ZLPermission/Classes/contacts/**/*'
+     core.weak_framework       = 'Accounts'
    end
   s.subspec 'siri' do |core|
      core.source_files = 'ZLPermission/Classes/siri/**/*'
+     core.weak_framework       = 'Intents'
    end
   s.subspec 'speechRecognition' do |core|
      core.source_files = 'ZLPermission/Classes/speechRecognition/**/*'
+     core.weak_framework       = 'Speech'
    end
   s.subspec 'motion' do |core|
      core.source_files = 'ZLPermission/Classes/motion/**/*'
+     core.weak_framework       = 'CoreMotion'
    end
   
   # s.resource_bundles = {

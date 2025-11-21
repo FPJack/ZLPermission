@@ -30,31 +30,38 @@
     },
     {
       "name": "camera",
-      "source_files": "ZLPermission/Classes/camera/**/*"
+      "source_files": "ZLPermission/Classes/camera/**/*",
+      "weak_frameworks": "AVFoundation"
     },
     {
       "name": "photo",
-      "source_files": "ZLPermission/Classes/photo/**/*"
+      "source_files": "ZLPermission/Classes/photo/**/*",
+      "weak_frameworks": "Photos"
     },
     {
       "name": "microphone",
-      "source_files": "ZLPermission/Classes/microphone/**/*"
+      "source_files": "ZLPermission/Classes/microphone/**/*",
+      "weak_frameworks": "AVFoundation"
     },
     {
       "name": "location",
-      "source_files": "ZLPermission/Classes/location/**/*"
+      "source_files": "ZLPermission/Classes/location/**/*",
+      "weak_frameworks": "CoreLocation"
     },
     {
       "name": "bluetooth",
-      "source_files": "ZLPermission/Classes/bluetooth/**/*"
+      "source_files": "ZLPermission/Classes/bluetooth/**/*",
+      "weak_frameworks": "CoreBluetooth"
     },
     {
       "name": "calendar",
-      "source_files": "ZLPermission/Classes/calendar/**/*"
+      "source_files": "ZLPermission/Classes/calendar/**/*",
+      "weak_frameworks": "EventKit"
     },
     {
       "name": "reminders",
-      "source_files": "ZLPermission/Classes/reminders/**/*"
+      "source_files": "ZLPermission/Classes/reminders/**/*",
+      "weak_frameworks": "EventKit"
     },
     {
       "name": "tracking",
@@ -62,35 +69,41 @@
     },
     {
       "name": "mediaLibrary",
-      "source_files": "ZLPermission/Classes/mediaLibrary/**/*"
-    },
-    {
-      "name": "network",
-      "source_files": "ZLPermission/Classes/network/**/*"
+      "source_files": "ZLPermission/Classes/mediaLibrary/**/*",
+      "weak_frameworks": "MediaPlayer"
     },
     {
       "name": "notification",
-      "source_files": "ZLPermission/Classes/notification/**/*"
+      "source_files": "ZLPermission/Classes/notification/**/*",
+      "weak_frameworks": [
+        "UIKit",
+        "UserNotifications"
+      ]
     },
     {
       "name": "health",
-      "source_files": "ZLPermission/Classes/health/**/*"
+      "source_files": "ZLPermission/Classes/health/**/*",
+      "weak_frameworks": "HealthKit"
     },
     {
       "name": "contacts",
-      "source_files": "ZLPermission/Classes/contacts/**/*"
+      "source_files": "ZLPermission/Classes/contacts/**/*",
+      "weak_frameworks": "Accounts"
     },
     {
       "name": "siri",
-      "source_files": "ZLPermission/Classes/siri/**/*"
+      "source_files": "ZLPermission/Classes/siri/**/*",
+      "weak_frameworks": "Intents"
     },
     {
       "name": "speechRecognition",
-      "source_files": "ZLPermission/Classes/speechRecognition/**/*"
+      "source_files": "ZLPermission/Classes/speechRecognition/**/*",
+      "weak_frameworks": "Speech"
     },
     {
       "name": "motion",
-      "source_files": "ZLPermission/Classes/motion/**/*"
+      "source_files": "ZLPermission/Classes/motion/**/*",
+      "weak_frameworks": "CoreMotion"
     }
   ]
 }
