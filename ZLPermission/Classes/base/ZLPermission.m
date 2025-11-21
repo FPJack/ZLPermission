@@ -59,6 +59,13 @@ static NSDictionary *permissionClassMap;
         if (failure) failure(isFirst,status,typeNum.integerValue);
     }];
 }
+- (void)requestPermissionWithStatusSuccess:(void (^)(NSInteger))success failure:(void (^)(NSInteger))failure {
+    [self requestPermissionWithSuccess:^(BOOL isFirst, NSInteger status) {
+        if (success) success(status);
+    } failure:^(BOOL isFirst, NSInteger status) {
+        if (failure) failure(status);
+    }];
+}
 - (void)requestSuccess:(nonnull void (^)(void))success failure:(nonnull void (^)(void))failure {
     [self requestPermissionWithSuccess:^(BOOL isFirst, NSInteger status) {
         if (success) success();

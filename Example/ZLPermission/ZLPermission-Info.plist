@@ -37,11 +37,11 @@
 	<key>NSContactsUsageDescription</key>
 	<string>请允许访问通讯录</string>
 	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
-	<string>请允许访问健康数据</string>
+	<string>\u8bbf\u95ee\u5065\u5eb7\u6570\u636e</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>请允许访问健康数据</string>
+	<string>\u8bbf\u95ee\u5065\u5eb7\u6570\u636e</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>访问健康数据</string>
+	<string>\u8bbf\u95ee\u5065\u5eb7\u6570\u636e</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>请允许访问定位功能</string>
 	<key>NSLocationAlwaysUsageDescription</key>

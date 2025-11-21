@@ -7,7 +7,7 @@
 
 #import "ZLPermissionLocation.h"
 #import <CoreLocation/CoreLocation.h>
-#define kLocationFinishedNotification @"kGMLocationFinishedNotification"
+#define kLocationFinishedNotification @"kZLLocationFinishedNotification"
 @interface ZLPermissionLocation()<CLLocationManagerDelegate>
 @property(nonatomic,strong) CLLocationManager *locationManager;
 @end

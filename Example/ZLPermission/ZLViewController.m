@@ -28,7 +28,7 @@
 //    [self requestCalendarPermission];
 //    [self requestRemindersPermission];
 //    [self requestMediaLibraryPermission];
-//     [self requestHealthPermission];
+     [self requestHealthPermission];
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self requestTrackingPermission];
 //    });
@@ -40,6 +40,7 @@
 //    [self requestMotionPermission];
 //    [self requestMotionPermission];
 //    [self requestMotionPermission];
+    
 }
 - (void)requestMotionPermission {
     if (@available(iOS 11.0, *)) {
@@ -113,7 +114,6 @@
         @(ZLPermissionTypeReminders):@"提醒事项",
         @(ZLPermissionTypeHealth):@"健康",
         @(ZLPermissionTypeContacts):@"通讯录",
-        @(ZLPermissionTypeNetwork):@"网络",
         @(ZLPermissionTypeTracking):@"跟踪",
         @(ZLPermissionTypeSiri):@"Siri",
         @(ZLPermissionTypeSpeechRecognizer):@"语音识别",
