@@ -20,6 +20,7 @@
 #import "ZLPermissionLocation.h"
 #import "ZLPermissionMediaLibrary.h"
 #import "ZLPermissionMicrophone.h"
+#import "ZLPermissionMotion.h"
 #import "ZLPermissionNotification.h"
 #import "ZLPermissionPhoto.h"
 #import "ZLPermissionReminders.h"

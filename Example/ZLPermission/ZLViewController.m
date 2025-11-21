@@ -20,7 +20,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CMErrorMotionActivityNotAuthorized;
 	// Do any additional setup after loading the view, typically from a nib.
 //    [self requestCameraPermission];
 //    [self requestPhotoPermission];
@@ -38,7 +37,15 @@
 //    [self requestContactsPermission];
 //    [self requestSiriPermission];
 //    [self requestSpeechRecognizerPermission];
-    
+    [self requestMotionPermission];
+    [self requestMotionPermission];
+    [self requestMotionPermission];
+}
+- (void)requestMotionPermission {
+    if (@available(iOS 11.0, *)) {
+        [ZLPermission.motion requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    } else {
+    }
 }
 - (void)requestSpeechRecognizerPermission {
     [ZLPermission.speechRecognizer requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
@@ -110,6 +117,7 @@
         @(ZLPermissionTypeTracking):@"跟踪",
         @(ZLPermissionTypeSiri):@"Siri",
         @(ZLPermissionTypeSpeechRecognizer):@"语音识别",
+        @(ZLPermissionTypeMotion):@"运动与健身",
     };
     return dic[@(type)];
 }

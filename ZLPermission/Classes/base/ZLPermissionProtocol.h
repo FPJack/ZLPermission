@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger,ZLPermissionType)
     ZLPermissionTypeTracking,
     ZLPermissionTypeSiri,
     ZLPermissionTypeSpeechRecognizer,
+    ZLPermissionTypeMotion,
 };
 
 
@@ -127,6 +128,13 @@ typedef NS_ENUM(NSInteger,ZLSpeechRecognizerAuthorizationStatus)
     ZLSpeechRecognizerAuthorizationStatusAuthorized,
 };
 
+typedef NS_ENUM(NSInteger,ZLMotionAuthorizationStatus)
+{
+    ZLMotionAuthorizationStatusNotDetermined = 0,
+    ZLMotionAuthorizationStatusDenied,
+    ZLMotionAuthorizationStatusRestricted,
+    ZLMotionAuthorizationStatusAuthorized,
+} API_AVAILABLE(ios(11.0));
 
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
@@ -324,6 +332,18 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
                              failure:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))failure;
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+@end
+
+
+@protocol ZLMotionPermissionProtocol <ZLPermissionProtocol>
+@required
++ (id<ZLMotionPermissionProtocol> )share;
+- (BOOL)isActivityAvailable;
+- (ZLMotionAuthorizationStatus)getPermissionStatus API_AVAILABLE(ios(11.0));
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
+                             failure:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))failure API_AVAILABLE(ios(11.0));
+- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
+                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure  API_AVAILABLE(ios(11.0));
 @end
 
 NS_ASSUME_NONNULL_END

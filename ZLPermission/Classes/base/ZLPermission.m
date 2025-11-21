@@ -51,6 +51,7 @@ static NSDictionary *permissionClassMap;
             @"ZLPermissionContacts": @(ZLPermissionTypeContacts),
             @"ZLPermissionSiri": @(ZLPermissionTypeSiri),
             @"ZLPermissionSpeechRecognition": @(ZLPermissionTypeSpeechRecognizer),
+            @"ZLPermissionMotion": @(ZLPermissionTypeMotion),
         };
     });
     NSNumber *typeNum = permissionClassMap[NSStringFromClass([self class])];
@@ -134,6 +135,10 @@ static NSDictionary *permissionClassMap;
 + (id<ZLSpeechRecognizerPermissionProtocol>)speechRecognizer {
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionSpeechRecognition"];
     return (id<ZLSpeechRecognizerPermissionProtocol>)[cls share];
+}
++ (id<ZLMotionPermissionProtocol>)motion {
+    Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionMotion"];
+    return (id<ZLMotionPermissionProtocol>)[cls share];
 }
 + (void)goToAppSystemSetting {
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];

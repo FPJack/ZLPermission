@@ -80,6 +80,9 @@ TODO: Add long description of the pod here.
   s.subspec 'speechRecognition' do |core|
      core.source_files = 'ZLPermission/Classes/speechRecognition/**/*'
    end
+  s.subspec 'motion' do |core|
+     core.source_files = 'ZLPermission/Classes/motion/**/*'
+   end
   
   # s.resource_bundles = {
   #   'ZLPermission' => ['ZLPermission/Assets/*.png']

@@ -87,6 +87,10 @@
     {
       "name": "speechRecognition",
       "source_files": "ZLPermission/Classes/speechRecognition/**/*"
+    },
+    {
+      "name": "motion",
+      "source_files": "ZLPermission/Classes/motion/**/*"
     }
   ]
 }

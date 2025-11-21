@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLContactsPermissionProtocol>)contacts;
 + (id<ZLSiriPermissionProtocol>)siri;
 + (id<ZLSpeechRecognizerPermissionProtocol>)speechRecognizer;
++ (id<ZLMotionPermissionProtocol>)motion API_AVAILABLE(ios(11.0));
 
 /// 跳转去设置界面开启权限
 + (void)goToAppSystemSetting;
