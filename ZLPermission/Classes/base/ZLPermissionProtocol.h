@@ -7,8 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef ZLPermissionRequestHealthEnabled
+#import <HealthKit/HealthKit.h>
 @class ZLHKRes;
-
+#endif
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -303,24 +305,20 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
                      failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
+#ifdef ZLPermissionRequestHealthEnabled
 
-@protocol ZLHealthPermissionProtocol <ZLPermissionProtocol>
+@protocol ZLHealthPermissionProtocol <NSObject>
 @required
-+ (id<ZLHealthPermissionProtocol> )share;
-- (ZLHealthAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLHealthAuthorizationStatus status))success
-                                   failure:(void(^)(ZLHealthAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLHealthAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
-
-
-
-
-
++ (id<ZLHealthPermissionProtocol>)share;
+- (BOOL)isHealthDataAvailable;
+- (ZLHealthAuthorizationStatus)getPermissionStatusWithHKObjectType:(HKQuantityTypeIdentifier)quantityTypeIdentifier;
+- (void)requestPermissionWithWriteTypes:(NSArray<HKQuantityTypeIdentifier > *)writeTypes
+                              readTypes:(NSArray<HKQuantityTypeIdentifier > *)readTypesadTypes
+                                success:(void(^)(NSArray<ZLHKRes *> *))success
+                                failure:(void(^)(NSArray<ZLHKRes *> *))failure;
 @end
 
+#endif
 
 @protocol ZLNotificationPermissionProtocol <ZLPermissionProtocol>
 @required

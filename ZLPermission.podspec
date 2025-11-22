@@ -89,6 +89,9 @@ TODO: Add long description of the pod here.
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/health/**/*'
      core.weak_framework       = 'HealthKit'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestHealthEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'contacts' do |core|
     core.dependency 'ZLPermission/base'

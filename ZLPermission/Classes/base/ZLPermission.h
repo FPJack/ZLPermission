@@ -23,7 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<ZLRemindersPermissionProtocol>)reminders;
 + (id<ZLTrackingPermissionProtocol>)tracking;
 + (id<ZLMediaLibraryPermissionProtocol>)mediaLibrary;
+#ifdef ZLPermissionRequestHealthEnabled
 + (id<ZLHealthPermissionProtocol>)health;
+#endif
+
 + (id<ZLNotificationPermissionProtocol>)notification;
 + (id<ZLContactsPermissionProtocol>)contacts;
 + (id<ZLSiriPermissionProtocol>)siri;

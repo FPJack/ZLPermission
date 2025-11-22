@@ -123,10 +123,13 @@ static NSDictionary *permissionClassMap;
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionMediaLibrary"];
     return (id<ZLMediaLibraryPermissionProtocol>)[cls share];
 }
+#ifdef ZLPermissionRequestHealthEnabled
 + (id<ZLHealthPermissionProtocol>)health {
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionHealth"];
     return (id<ZLHealthPermissionProtocol>)[cls share];
 }
+#endif
+
 + (id<ZLNotificationPermissionProtocol>)notification {
     Class <ZLPermissionProtocol> cls = [self permissionModuleName:@"ZLPermissionNotification"];
     return (id<ZLNotificationPermissionProtocol>)[cls share];

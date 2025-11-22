@@ -4,6 +4,7 @@
 //
 //  Created by admin on 2025/11/21.
 //
+#ifdef ZLPermissionRequestHealthEnabled
 
 #import <Foundation/Foundation.h>
 #import <ZLPermission/ZLPermissionProtocol.h>
@@ -18,3 +19,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+#endif

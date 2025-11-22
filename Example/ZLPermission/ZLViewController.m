@@ -11,6 +11,7 @@
 #import <ZLPermission/ZLPermissionProtocol.h>
 #import <ZLPermission/ZLPermissionCamera.h>
 #import <CoreMotion/CoreMotion.h>
+#import <ZLPermission/ZLPermissionHealth.h>
 @interface ZLViewController ()
 
 @end
@@ -28,7 +29,7 @@
 //    [self requestCalendarPermission];
 //    [self requestRemindersPermission];
 //    [self requestMediaLibraryPermission];
-     [self requestHealthPermission];
+    // [self requestHealthPermission];
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self requestTrackingPermission];
 //    });
@@ -40,7 +41,8 @@
 //    [self requestMotionPermission];
 //    [self requestMotionPermission];
 //    [self requestMotionPermission];
-    
+
+
 }
 - (void)requestMotionPermission {
     if (@available(iOS 11.0, *)) {
@@ -61,7 +63,17 @@
     [ZLPermission.notification requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestHealthPermission {
-    [ZLPermission.health requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+#ifdef ZLPermissionRequestHealthEnabled
+    [ZLPermissionHealth.share requestPermissionWithWriteTypes:@[
+        HKQuantityTypeIdentifierDistanceWalkingRunning,
+    ] readTypes:@[
+        HKQuantityTypeIdentifierSwimmingStrokeCount
+    ] success:^(NSArray<ZLHKRes *> * _Nonnull results) {
+        NSLog(@"%@",results);
+    } failure:^(NSArray<ZLHKRes *> * _Nonnull results) {
+        NSLog(@"%@",results);
+    }];
+#endif
 }
 - (void)requestMediaLibraryPermission {
     [ZLPermission.mediaLibrary requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
