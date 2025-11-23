@@ -1,6 +1,5 @@
 # ZLPermission
-
-同一套API方法支持iOS常用15种权限申请(定位，蓝牙功能支持同时多处地方申请共享同一次结果回调)，使用方便快捷的同时保留了各个权限特有的状态码。健康数据权限申请查看特有的API方法调用
+iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调用简单统一的同时还保留了各个权限申请特有的状态码，定位,蓝牙功能支持同时多处地方申请共享同一次结果回调,健康数据权限申请查看特有的API方法调用
 
 [![CI Status](https://img.shields.io/travis/fanpeng/ZLPermission.svg?style=flat)](https://travis-ci.org/fanpeng/ZLPermission)
 [![Version](https://img.shields.io/cocoapods/v/ZLPermission.svg?style=flat)](https://cocoapods.org/pods/ZLPermission)
@@ -8,7 +7,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/ZLPermission.svg?style=flat)](https://cocoapods.org/pods/ZLPermission)
 
 ## 例子
-    ###以相机为例，其他权限申请一致,申请权限时确保plistInfo里面已添加了相对应的权限申请说明,siri权限申请需要付费开发者账号开通
+    以相机为例，其他权限申请一致,申请权限时确保plistInfo里面已添加了相对应的权限申请说明,siri权限申请需要付费开发者账号开通
     
     1.只返回成功失败结果
         [ZLPermission.camera requestPermissionWithSuccess:^{
