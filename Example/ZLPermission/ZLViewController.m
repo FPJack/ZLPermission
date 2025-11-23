@@ -32,6 +32,10 @@
     }
     self.datas = arr;
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(appDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    
+   
+    
 }
 - (void)appDidBecomeActive{
     [self.tableView  reloadData];
