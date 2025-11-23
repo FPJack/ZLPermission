@@ -7,7 +7,7 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
 [![Platform](https://img.shields.io/cocoapods/p/ZLPermission.svg?style=flat)](https://cocoapods.org/pods/ZLPermission)
 
 ## 例子
-    以相机为例，其他权限申请一致,申请权限时确保plistInfo里面已添加了相对应的权限申请说明,siri权限申请需要付费开发者账号开通
+    ###以相机为例，其他权限申请一致,申请权限时确保plistInfo里面已添加了相对应的权限申请说明,siri权限申请需要付费开发者账号开通
 ```objc
 
     1.只返回成功失败结果
