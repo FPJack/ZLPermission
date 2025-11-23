@@ -10,6 +10,7 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
     以相机为例，其他权限申请一致,申请权限时确保plistInfo里面已添加了相对应的权限申请说明,siri权限申请需要付费开发者账号开通
     
     1.只返回成功失败结果
+    
         [ZLPermission.camera requestPermissionWithSuccess:^{
                 
         } failure:^{
@@ -17,6 +18,7 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
         }];
     
     2.失败返回失败状态码
+    
         [ZLPermission.camera requestPermissionWithSuccess:^{
             
         } failureWithStatus:^(ZLAuthorizationStatus status) {
@@ -24,6 +26,7 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
         }];
     
     3.成功失败返回都返回状态码
+    
         [ZLPermission.camera requestPermissionOnlyStatusWithSuccess:^(ZLAuthorizationStatus status) {
             
         } failure:^(ZLAuthorizationStatus status) {
@@ -31,13 +34,15 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
         }];
     
     4.成功失败返回都返回状态码以及返回是否是初次申请
+    
         [ZLPermission.camera requestPermissionStatusWithSuccess:^(BOOL isFirst, ZLAuthorizationStatus status) {
             
         } failure:^(BOOL isFirst, ZLAuthorizationStatus status) {
             
         }];
     
-    5.成功失败返回都返回状态码以及返回是否是初次申请，失败还返回申请权限类型方便统一做失败结果处理
+    5.成功失败都返回状态码以及返回是否是初次申请，失败还返回申请权限类型方便统一做失败结果处理
+    
         [ZLPermission.camera requestPermissionStatusWithSuccess:^(BOOL isFirst, ZLAuthorizationStatus status) {
             
         } failureWithType:^(BOOL isFirst, NSInteger status, ZLPermissionType type) {
@@ -45,9 +50,11 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
         }];
     
     6.获取相对应的权限状态码
+    
         [ZLPermission.camera getPermissionStatus];
     
     7.直接获取是否已授权
+    
         [ZLPermission.camera hasPermission];
 
     8.差别权限申请查看相对应的API方法,例如（相册，蓝牙，定位，健康...）
@@ -61,9 +68,13 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
 cocoapods 导入
 
 ```ruby
-  #一次性倒入
+
+  一次性倒入
+  
   pod 'ZLPermission'
-  #按需导入
+  
+  按需导入
+  
   pod 'ZLPermission/camera'
   pod 'ZLPermission/photo'
   pod 'ZLPermission/location'
