@@ -12,8 +12,11 @@
 #import <ZLPermission/ZLPermissionCamera.h>
 #import <CoreMotion/CoreMotion.h>
 #import <ZLPermission/ZLPermissionHealth.h>
-@interface ZLViewController ()
+#import "ZLTableViewCell.h"
 
+@interface ZLViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong)NSArray *datas;
 @end
 
 @implementation ZLViewController
@@ -21,47 +24,281 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-//    [self requestCameraPermission];
-//    [self requestPhotoPermission];
-//    [self requestMicrophonePermission];
-//    [self requestLocationPermission];
-//    [self requestCalendarPermission];
-//    [self requestRemindersPermission];
-//    [self requestMediaLibraryPermission];
-    // [self requestHealthPermission];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self requestTrackingPermission];
-//    });
-//    [self requestHealthPermission];
-//    [self requestNotificationPermission];
-//    [self requestContactsPermission];
-//    [self requestSiriPermission];
-//    [self requestSpeechRecognizerPermission];
-//    [self requestMotionPermission];
-//    [self requestMotionPermission];
-//    [self requestMotionPermission];
-
-
-}
-- (void)requestMotionPermission {
-    if (@available(iOS 11.0, *)) {
-        [ZLPermission.motion requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-    } else {
+    
+    NSMutableArray  *arr = NSMutableArray.array;
+    for (int i  = 0 ; i < 15; i ++) {
+        [self.tableView registerNib:[UINib nibWithNibName:@"ZLTableViewCell" bundle:nil] forCellReuseIdentifier:[NSString stringWithFormat:@"%d",i]];
+        [arr addObject:@(i)];
     }
+    self.datas = arr;
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(appDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
-- (void)requestSpeechRecognizerPermission {
-    [ZLPermission.speechRecognizer requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
+- (void)appDidBecomeActive{
+    [self.tableView  reloadData];
 }
-- (void)requestSiriPermission {
-    [ZLPermission.siri requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.datas.count;
 }
-- (void)requestContactsPermission {
-    [ZLPermission.contacts requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellId = [NSString stringWithFormat:@"%ld",indexPath.row];
+    ZLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    ZLPermissionType type = indexPath.row;
+    NSString *title = [self permissionName:type];
+    cell.titleLab.text = title;
+    ZLButtonType buttonType;
+    cell.goSetting = ^{
+        [self goSetting:type];
+    };
+    switch (type) {
+        case ZLPermissionTypeLocation:
+        {
+            if (ZLPermission.location.getPermissionStatus == ZLLocationAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.location.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.location requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeCamera:
+        {
+            if (ZLPermission.camera.getPermissionStatus == ZLAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.camera.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.camera requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypePhoto:
+        {
+            if (ZLPermission.photo.getPermissionStatus == ZLPhotoAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.photo.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.photo requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeMicrophone:
+        {
+            if (ZLPermission.microphone.getPermissionStatus == ZLMicrophoneAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.microphone.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.microphone requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeNotification:
+        {
+            if (ZLPermission.notification.getPermissionStatus == ZLNotificationAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.notification.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.notification requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeBluetooth:
+        {
+            if (ZLPermission.bluetooth.getPermissionStatus == ZLBluetoothCapabilityNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.bluetooth.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.bluetooth requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeMediaLibrary:
+        {
+            if (ZLPermission.mediaLibrary.getPermissionStatus == ZLAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.mediaLibrary.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.mediaLibrary requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeCalendar:
+        {
+            if (ZLPermission.calendar.getPermissionStatus == ZLEventAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.calendar.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.calendar requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeReminders:
+        {
+            if (ZLPermission.reminders.getPermissionStatus == ZLEventAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.reminders.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.reminders requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeHealth:
+        {
+            if (ZLPermission.reminders.getPermissionStatus == ZLEventAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.reminders.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.reminders requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeContacts:
+        {
+            if (ZLPermission.contacts.getPermissionStatus == ZLContactsAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.contacts.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.contacts requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeTracking:
+        {
+            if (ZLPermission.tracking.getPermissionStatus == ZLAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.tracking.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.tracking requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+//        case ZLPermissionTypeSiri:
+//        {
+//            if (ZLPermission.siri.getPermissionStatus == ZLSiriAuthorizationStatusNotDetermined) {
+//                buttonType  = ZLButtonTypeNotDetermined;
+//            }else {
+//                buttonType = ZLPermission.siri.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+//            }
+//            cell.requestPermission = ^{
+//                [ZLPermission.siri requestPermissionWithSuccess:^{
+//                    [tableView reloadData];
+//                } failure:^{
+//                    [tableView reloadData];
+//                }];
+//            };
+//            break;
+//        }
+        case ZLPermissionTypeSpeechRecognizer:
+        {
+            if (ZLPermission.speechRecognizer.getPermissionStatus == ZLSpeechRecognizerAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.speechRecognizer.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.speechRecognizer requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        case ZLPermissionTypeMotion:
+        {
+            if (ZLPermission.motion.getPermissionStatus == ZLMotionAuthorizationStatusNotDetermined) {
+                buttonType  = ZLButtonTypeNotDetermined;
+            }else {
+                buttonType = ZLPermission.motion.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+            }
+            cell.requestPermission = ^{
+                [ZLPermission.motion requestPermissionWithSuccess:^{
+                    [tableView reloadData];
+                } failure:^{
+                    [tableView reloadData];
+                }];
+            };
+            break;
+        }
+        default:
+            break;
+    }
+    
+    cell.button.type = buttonType;
+    return cell;
 }
-- (void)requestNotificationPermission {
-    [ZLPermission.notification requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
+
+
 - (void)requestHealthPermission {
 #ifdef ZLPermissionRequestHealthEnabled
     [ZLPermissionHealth.share requestPermissionWithWriteTypes:@[
@@ -74,44 +311,6 @@
         NSLog(@"%@",results);
     }];
 #endif
-}
-- (void)requestMediaLibraryPermission {
-    [ZLPermission.mediaLibrary requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestTrackingPermission {
-    [ZLPermission.tracking requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestRemindersPermission {
-    [ZLPermission.reminders requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestCalendarPermission {
-    [ZLPermission.calendar requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestBluetoothPermission {
-    [ZLPermission.bluetooth requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestLocationPermission {
-    [ZLPermission.location requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestMicrophonePermission {
-    [ZLPermission.microphone requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestCameraPermission {
-    [ZLPermission.camera requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void)requestPhotoPermission {
-    [ZLPermission.photo requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
-}
-- (void(^) (BOOL,NSInteger))successCallback {
-    return ^(BOOL isFirst, NSInteger status){
-        NSLog(@"success isFirst:%d status:%ld", isFirst, (long)status);
-    };
-}
-- (void(^) (BOOL,NSInteger,ZLPermissionType))failureCallback {
-    return ^(BOOL isFirst, NSInteger status, ZLPermissionType type){
-        NSLog(@"%@ failure isFirst:%d status:%ld",[self permissionName:type], isFirst, (long)status);
-        [self goSetting:type];
-    };
 }
 - (NSString *)permissionName:(ZLPermissionType)type {
     NSDictionary *dic = @{
@@ -141,10 +340,6 @@
         [ZLPermission goToAppSystemSetting];
     }];
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end

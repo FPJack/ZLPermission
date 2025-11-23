@@ -61,10 +61,12 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (granted) {
                     [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-                        if (settings.authorizationStatus == UNAuthorizationStatusAuthorized){
-                            [[UIApplication sharedApplication] registerForRemoteNotifications];
-                            if (success) success(isFirst,[self parseStatus:settings.authorizationStatus]);
-                        }
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            if (settings.authorizationStatus == UNAuthorizationStatusAuthorized){
+                                [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                if (success) success(isFirst,[self parseStatus:settings.authorizationStatus]);
+                            }
+                        });
                     }];
                 }else {
                     if (failure) failure(isFirst,ZLNotificationAuthorizationStatusDenied);

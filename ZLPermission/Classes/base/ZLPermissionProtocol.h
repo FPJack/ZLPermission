@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger,ZLPermissionType)
 {
-    ZLPermissionTypeLocation,
+    ZLPermissionTypeLocation = 0,
     ZLPermissionTypePhoto,
     ZLPermissionTypeCamera,
     ZLPermissionTypeMicrophone,
@@ -150,17 +150,22 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 
 @protocol ZLPermissionProtocol <NSObject>
 @required
-+ (id )share;
++ (id<ZLPermissionProtocol> )share;
 - (BOOL)hasPermission;
 - (NSInteger)getPermissionStatus;
+///失败成功返回
 - (void)requestPermissionWithSuccess:(void(^)(void))success
                              failure:(void(^)(void))failure;
+///失败返回权限状态
 - (void)requestPermissionWithSuccess:(void(^)(void))success
                    failureWithStatus:(void(^)(NSInteger))failure;
+///失败成功都返回权限状态
 - (void)requestPermissionOnlyStatusWithSuccess:(void(^)(NSInteger status))success
                                        failure:(void(^)(NSInteger status))failure;
+///失败成功都返回权限状态并且返回是否是初次申请权限
 - (void)requestPermissionStatusWithSuccess:(ZLSuccessCallback)success
                                    failure:(ZLFailureCallback)failure;
+///失败成功都返回权限状态并且返回是否是第一次初次申请权限，以及失败的时候返回申请权限类型，方便统一失败处理
 - (void)requestPermissionStatusWithSuccess:(ZLSuccessCallback)success
                            failureWithType:(ZLFailureTypeCallback)failure;
 @end

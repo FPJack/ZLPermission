@@ -41,7 +41,7 @@
 - (ZLBluetoothCapabilities)getPermissionStatus {
     ZLBluetoothCapabilities capabilities;
     if (@available(iOS 13.1, *)) {
-        switch (CBManager.authorization) {
+        switch (CBCentralManager.authorization) {
             case CBManagerAuthorizationNotDetermined:
             {
                 capabilities = ZLBluetoothCapabilityNotDetermined;

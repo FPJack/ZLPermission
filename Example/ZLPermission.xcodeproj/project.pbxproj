@@ -21,6 +21,9 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6211F7B92ED29EF80080D736 /* ZLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211F7B82ED29EF80080D736 /* ZLButton.m */; };
+		6211F7BD2ED2A05E0080D736 /* ZLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211F7BB2ED2A05E0080D736 /* ZLTableViewCell.m */; };
+		6211F7BE2ED2A05E0080D736 /* ZLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6211F7BC2ED2A05E0080D736 /* ZLTableViewCell.xib */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F545394F99A0E0C7EB2CDC6D /* Pods_ZLPermission_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E23CBA16D571DAB1F858DC2 /* Pods_ZLPermission_Tests.framework */; };
@@ -59,6 +62,11 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		6211F7B72ED29EF80080D736 /* ZLButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLButton.h; sourceTree = "<group>"; };
+		6211F7B82ED29EF80080D736 /* ZLButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLButton.m; sourceTree = "<group>"; };
+		6211F7BA2ED2A05E0080D736 /* ZLTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLTableViewCell.h; sourceTree = "<group>"; };
+		6211F7BB2ED2A05E0080D736 /* ZLTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLTableViewCell.m; sourceTree = "<group>"; };
+		6211F7BC2ED2A05E0080D736 /* ZLTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLTableViewCell.xib; sourceTree = "<group>"; };
 		6BC2F7AD96CFE07A99349F03 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CD181C2B219E87AF56875A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -150,6 +158,11 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* ZLViewController.h */,
 				6003F5A6195388D20070C39A /* ZLViewController.m */,
+				6211F7B72ED29EF80080D736 /* ZLButton.h */,
+				6211F7B82ED29EF80080D736 /* ZLButton.m */,
+				6211F7BA2ED2A05E0080D736 /* ZLTableViewCell.h */,
+				6211F7BB2ED2A05E0080D736 /* ZLTableViewCell.m */,
+				6211F7BC2ED2A05E0080D736 /* ZLTableViewCell.xib */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -284,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6211F7BE2ED2A05E0080D736 /* ZLTableViewCell.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -391,7 +405,9 @@
 			files = (
 				6003F59E195388D20070C39A /* ZLAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* ZLViewController.m in Sources */,
+				6211F7BD2ED2A05E0080D736 /* ZLTableViewCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				6211F7B92ED29EF80080D736 /* ZLButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

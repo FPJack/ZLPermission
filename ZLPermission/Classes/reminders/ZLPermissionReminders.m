@@ -45,14 +45,22 @@
             if (@available(iOS 17.0, *)) {
                 [eventStore requestFullAccessToRemindersWithCompletion:^(BOOL granted, NSError * _Nullable error) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        if (success) success(YES,[self getPermissionStatus]);
+                        if (granted && error == nil) {
+                            if (success) success(YES,[self getPermissionStatus]);
+                        }else {
+                            if (failure) failure(YES,[self getPermissionStatus]);
+                        }
                     });
                 }];
             } else {
                 [eventStore requestAccessToEntityType:EKEntityTypeReminder
                                            completion:^(BOOL granted, NSError *error) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        if (success) success(YES,[self getPermissionStatus]);
+                        if (granted && error == nil) {
+                            if (success) success(YES,[self getPermissionStatus]);
+                        }else {
+                            if (failure) failure(YES,[self getPermissionStatus]);
+                        }
                     });
                 }];
             }

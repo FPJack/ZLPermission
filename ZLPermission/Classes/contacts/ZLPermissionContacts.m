@@ -15,7 +15,6 @@
 }
 
 - (ZLContactsAuthorizationStatus)parseStatus:(CNAuthorizationStatus)status {
-    return ZLContactsAuthorizationStatusDenied;;
     switch(status){
         case CNAuthorizationStatusNotDetermined:
             return ZLContactsAuthorizationStatusNotDetermined;
