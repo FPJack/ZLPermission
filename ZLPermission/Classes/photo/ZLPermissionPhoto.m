@@ -97,7 +97,7 @@
     }
 }
 
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))failure{
     [self requestPermissionReadWrite:YES success:success failure:failure];
 }

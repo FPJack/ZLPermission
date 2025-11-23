@@ -97,7 +97,7 @@
 
 
 
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
                              failure:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))failure{
    [self permissionWithSuccess:success failure:failure];
     [self bluetoothMonitor];

@@ -34,7 +34,7 @@
 - (ZLContactsAuthorizationStatus)getPermissionStatus {
     return [self parseStatus:[CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts]];
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))failure{
     ZLContactsAuthorizationStatus status = [self getPermissionStatus];
     switch (status)

@@ -62,7 +62,7 @@
     }
     
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure {
     ZLEventAuthorizationStatus status = [self getPermissionStatus];
     switch (status) {

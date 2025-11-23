@@ -153,15 +153,16 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 + (id )share;
 - (BOOL)hasPermission;
 - (NSInteger)getPermissionStatus;
-- (void)requestSuccess:(void(^)(void))success
-               failure:(void(^)(void))failure;
-- (void)requestPermissionWithStatusSuccess:(void(^)(NSInteger status))success
-                                   failure:(void(^)(NSInteger status))failure;
-
-- (void)requestPermissionWithSuccess:(ZLSuccessCallback)success
-                             failure:(ZLFailureCallback)failure;
-- (void)requestPermissionWithSuccess:(ZLSuccessCallback)success
-                     failureWithType:(ZLFailureTypeCallback)failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                             failure:(void(^)(void))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(NSInteger))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(NSInteger status))success
+                                       failure:(void(^)(NSInteger status))failure;
+- (void)requestPermissionStatusWithSuccess:(ZLSuccessCallback)success
+                                   failure:(ZLFailureCallback)failure;
+- (void)requestPermissionStatusWithSuccess:(ZLSuccessCallback)success
+                           failureWithType:(ZLFailureTypeCallback)failure;
 @end
 
 
@@ -170,12 +171,14 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLCameraPermissionProtocol> )share;
 - (ZLAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLAuthorizationStatus status))success
-                                   failure:(void(^)(ZLAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLAuthorizationStatus status))success
+                                       failure:(void(^)(ZLAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 
@@ -189,13 +192,16 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (BOOL)hasWritePermission;
 /// 获取读写权限状态
 - (ZLPhotoAuthorizationStatus)getOnlyWritePermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLPhotoAuthorizationStatus status))success
-                                   failure:(void(^)(ZLPhotoAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLPhotoAuthorizationStatus))failure;
+
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLPhotoAuthorizationStatus status))success
+                                       failure:(void(^)(ZLPhotoAuthorizationStatus status))failure;
 /// 请求读写权限
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 /// 仅请求写权限
 - (void)requestWriteOnlyPermissionWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
                                       failure:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))failure;
@@ -207,12 +213,14 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLMicrophonePermissionProtocol> )share;
 - (ZLMicrophoneAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLMicrophoneAuthorizationStatus status))success
-                                   failure:(void(^)(ZLMicrophoneAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLMicrophoneAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLMicrophoneAuthorizationStatus status))success
+                                       failure:(void(^)(ZLMicrophoneAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 
@@ -220,12 +228,14 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 - (BOOL)systemLocationServicesEnabled;
 - (ZLLocationAuthorizationStatus )getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLLocationAuthorizationStatus status))success
-                                   failure:(void(^)(ZLLocationAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLLocationAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLLocationAuthorizationStatus status))success
+                                       failure:(void(^)(ZLLocationAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status,ZLPermissionType type))failure;
 @end
 
 
@@ -235,17 +245,19 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 + (id<ZLBluetoothPermissionProtocol> )share;
 
 - (ZLBluetoothCapabilities)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLBluetoothCapabilities status))success
-                                   failure:(void(^)(ZLBluetoothCapabilities status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
-                             failure:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLBluetoothCapabilities))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLBluetoothCapabilities status))success
+                                       failure:(void(^)(ZLBluetoothCapabilities status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
+                                   failure:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))failure;
 
 ///系统权限关闭时，弹出系统窗口提示去设置开启蓝牙权限
 - (void)requestPermissionShowPowerAlertWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
                                            failure:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))failure;
 
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 
@@ -253,31 +265,36 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLEventPermissionProtocol> )share;
 - (ZLEventAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLEventAuthorizationStatus status))success
-                                   failure:(void(^)(ZLEventAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLEventAuthorizationStatus))failure;
+
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLEventAuthorizationStatus status))success
+                                       failure:(void(^)(ZLEventAuthorizationStatus status))failure;
 /// 请求Full access权限
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure;
 /// 仅请求Write only权限 ios    17+
 - (void)requestWriteOnlyPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
                                       failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure API_AVAILABLE(ios(17.0));
 
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure;
 @end
 
 @protocol ZLRemindersPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLRemindersPermissionProtocol> )share;
 - (ZLEventAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLEventAuthorizationStatus status))success
-                                   failure:(void(^)(ZLEventAuthorizationStatus status))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLEventAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLEventAuthorizationStatus status))success
+                                       failure:(void(^)(ZLEventAuthorizationStatus status))failure;
 /// 请求Full access权限
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))failure;
 
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure;
 @end
 
 
@@ -286,24 +303,29 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLTrackingPermissionProtocol> )share;
 - (ZLAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLAuthorizationStatus status))success
-                                   failure:(void(^)(ZLAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLAuthorizationStatus))failure;
+
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLAuthorizationStatus status))success
+                                       failure:(void(^)(ZLAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 @protocol ZLMediaLibraryPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLMediaLibraryPermissionProtocol> )share;
 - (ZLAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLAuthorizationStatus status))success
-                                   failure:(void(^)(ZLAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLAuthorizationStatus status))success
+                                       failure:(void(^)(ZLAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 #ifdef ZLPermissionRequestHealthEnabled
 
@@ -324,24 +346,28 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLNotificationPermissionProtocol> )share;
 - (ZLNotificationAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLNotificationAuthorizationStatus status))success
-                                   failure:(void(^)(ZLNotificationAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLNotificationAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLNotificationAuthorizationStatus status))success
+                                       failure:(void(^)(ZLNotificationAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 @protocol ZLContactsPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLContactsPermissionProtocol> )share;
 - (ZLContactsAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLContactsAuthorizationStatus status))success
-                                   failure:(void(^)(ZLContactsAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLContactsAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLContactsAuthorizationStatus status))success
+                                       failure:(void(^)(ZLContactsAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 
@@ -349,12 +375,15 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLSiriPermissionProtocol> )share;
 - (ZLSiriAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLSiriAuthorizationStatus status))success
-                                   failure:(void(^)(ZLSiriAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLSiriAuthorizationStatus))failure;
+
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLSiriAuthorizationStatus status))success
+                                       failure:(void(^)(ZLSiriAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 
@@ -362,12 +391,14 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLSpeechRecognizerPermissionProtocol> )share;
 - (ZLSpeechRecognizerAuthorizationStatus)getPermissionStatus;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLSpeechRecognizerAuthorizationStatus status))success
-                                   failure:(void(^)(ZLSpeechRecognizerAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))failure;
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLSpeechRecognizerAuthorizationStatus))failure;
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLSpeechRecognizerAuthorizationStatus status))success
+                                       failure:(void(^)(ZLSpeechRecognizerAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))failure;
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
 
 
@@ -375,13 +406,15 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 @required
 + (id<ZLMotionPermissionProtocol> )share;
 - (BOOL)isActivityAvailable;
-- (void)requestPermissionWithStatusSuccess:(void(^)(ZLMotionAuthorizationStatus status))success
-                                   failure:(void(^)(ZLMotionAuthorizationStatus status))failure API_AVAILABLE(ios(11.0));
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(ZLMotionAuthorizationStatus))failure API_AVAILABLE(ios(11.0));
+- (void)requestPermissionOnlyStatusWithSuccess:(void(^)(ZLMotionAuthorizationStatus status))success
+                                       failure:(void(^)(ZLMotionAuthorizationStatus status))failure API_AVAILABLE(ios(11.0));
 - (ZLMotionAuthorizationStatus)getPermissionStatus API_AVAILABLE(ios(11.0));
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
-                             failure:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))failure API_AVAILABLE(ios(11.0));
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
-                     failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure  API_AVAILABLE(ios(11.0));
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
+                                   failure:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))failure API_AVAILABLE(ios(11.0));
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
+                           failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure  API_AVAILABLE(ios(11.0));
 @end
 
 NS_ASSUME_NONNULL_END

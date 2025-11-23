@@ -16,7 +16,7 @@ static NSDictionary *permissionClassMap;
 - (BOOL)hasPermission {
     return NO;
 }
-- (void)requestPermissionWithSuccess:(ZLSuccessCallback)success failure:(ZLFailureCallback)failure {
+- (void)requestPermissionStatusWithSuccess:(ZLSuccessCallback)success failure:(ZLFailureCallback)failure {
     failure(YES,[self getPermissionStatus]);
 }
 + (nonnull NSObject *)share {
@@ -33,7 +33,7 @@ static NSDictionary *permissionClassMap;
         return instance;
     }
 }
-- (void)requestPermissionWithSuccess:(ZLSuccessCallback)success failureWithType:(ZLFailureTypeCallback)failure {
+- (void)requestPermissionStatusWithSuccess:(ZLSuccessCallback)success failureWithType:(ZLFailureTypeCallback)failure {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         permissionClassMap = @{
@@ -55,19 +55,27 @@ static NSDictionary *permissionClassMap;
         };
     });
     NSNumber *typeNum = permissionClassMap[NSStringFromClass([self class])];
-    [self requestPermissionWithSuccess:success failure:^(BOOL isFirst, NSInteger status) {
+    [self requestPermissionStatusWithSuccess:success failure:^(BOOL isFirst, NSInteger status) {
         if (failure) failure(isFirst,status,typeNum.integerValue);
     }];
 }
-- (void)requestPermissionWithStatusSuccess:(void (^)(NSInteger))success failure:(void (^)(NSInteger))failure {
-    [self requestPermissionWithSuccess:^(BOOL isFirst, NSInteger status) {
+- (void)requestPermissionOnlyStatusWithSuccess:(void (^)(NSInteger))success failure:(void (^)(NSInteger))failure {
+    [self requestPermissionStatusWithSuccess:^(BOOL isFirst, NSInteger status) {
         if (success) success(status);
     } failure:^(BOOL isFirst, NSInteger status) {
         if (failure) failure(status);
     }];
 }
-- (void)requestSuccess:(nonnull void (^)(void))success failure:(nonnull void (^)(void))failure {
-    [self requestPermissionWithSuccess:^(BOOL isFirst, NSInteger status) {
+- (void)requestPermissionWithSuccess:(void(^)(void))success
+                   failureWithStatus:(void(^)(NSInteger))failure{
+    [self requestPermissionStatusWithSuccess:^(BOOL isFirst, NSInteger status) {
+        if (success) success();
+    } failure:^(BOOL isFirst, NSInteger status) {
+        if (failure) failure(status);
+    }];
+}
+- (void)requestPermissionWithSuccess:(nonnull void (^)(void))success failure:(nonnull void (^)(void))failure {
+    [self requestPermissionStatusWithSuccess:^(BOOL isFirst, NSInteger status) {
         if (success) success();
     } failure:^(BOOL isFirst, NSInteger status) {
         if (failure) failure();

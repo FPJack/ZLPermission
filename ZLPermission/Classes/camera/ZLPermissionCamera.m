@@ -34,7 +34,7 @@
         return [self parseStatus:AVAuthorizationStatusAuthorized];
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure {
     if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]) {
         ZLAuthorizationStatus permission = [self getPermissionStatus];

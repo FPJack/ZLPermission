@@ -56,7 +56,7 @@
             return ZLMotionAuthorizationStatusDenied;
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))failure API_AVAILABLE(ios(11.0)){
     ZLMotionAuthorizationStatus status = [self getPermissionStatus];
     if (status == ZLMotionAuthorizationStatusNotDetermined) {

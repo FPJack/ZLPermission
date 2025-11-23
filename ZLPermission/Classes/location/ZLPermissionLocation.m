@@ -87,7 +87,7 @@
     if (status == ZLLocationAuthorizationStatusNotDetermined) return;
     [NSNotificationCenter.defaultCenter postNotificationName:kLocationFinishedNotification object:self.locationManager userInfo:@{@"status":@(status)}];
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))failure{
     ZLLocationAuthorizationStatus authorizationStatus = [self getPermissionStatus];
     NSString *key = @"ZLPermissionLocation";

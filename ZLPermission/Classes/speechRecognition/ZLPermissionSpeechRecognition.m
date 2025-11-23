@@ -28,7 +28,7 @@
             return ZLSpeechRecognizerAuthorizationStatusDenied;
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))failure {
     ZLSpeechRecognizerAuthorizationStatus status = [self getPermissionStatus];
     if (status == ZLSpeechRecognizerAuthorizationStatusNotDetermined) {

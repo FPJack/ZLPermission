@@ -29,7 +29,7 @@
             return ZLAuthorizationStatusDenied;
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))failure {
     ZLAuthorizationStatus status = [self getPermissionStatus];
     switch (status) {

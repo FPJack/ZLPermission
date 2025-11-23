@@ -46,21 +46,21 @@
 }
 - (void)requestMotionPermission {
     if (@available(iOS 11.0, *)) {
-        [ZLPermission.motion requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+        [ZLPermission.motion requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
     } else {
     }
 }
 - (void)requestSpeechRecognizerPermission {
-    [ZLPermission.speechRecognizer requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.speechRecognizer requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestSiriPermission {
-    [ZLPermission.siri requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.siri requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestContactsPermission {
-    [ZLPermission.contacts requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.contacts requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestNotificationPermission {
-    [ZLPermission.notification requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.notification requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestHealthPermission {
 #ifdef ZLPermissionRequestHealthEnabled
@@ -76,31 +76,31 @@
 #endif
 }
 - (void)requestMediaLibraryPermission {
-    [ZLPermission.mediaLibrary requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.mediaLibrary requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestTrackingPermission {
-    [ZLPermission.tracking requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.tracking requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestRemindersPermission {
-    [ZLPermission.reminders requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.reminders requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestCalendarPermission {
-    [ZLPermission.calendar requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.calendar requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestBluetoothPermission {
-    [ZLPermission.bluetooth requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.bluetooth requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestLocationPermission {
-    [ZLPermission.location requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.location requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestMicrophonePermission {
-    [ZLPermission.microphone requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.microphone requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestCameraPermission {
-    [ZLPermission.camera requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.camera requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void)requestPhotoPermission {
-    [ZLPermission.photo requestPermissionWithSuccess:self.successCallback failureWithType:self.failureCallback];
+    [ZLPermission.photo requestPermissionStatusWithSuccess:self.successCallback failureWithType:self.failureCallback];
 }
 - (void(^) (BOOL,NSInteger))successCallback {
     return ^(BOOL isFirst, NSInteger status){

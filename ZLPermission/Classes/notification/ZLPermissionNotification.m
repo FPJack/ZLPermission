@@ -50,7 +50,7 @@
     dispatch_semaphore_wait(sem , DISPATCH_TIME_FOREVER);
     return [self parseStatus:authorizationStatus];
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))failure {
     ZLNotificationAuthorizationStatus status = [self getPermissionStatus];
     if (status == ZLNotificationAuthorizationStatusNotDetermined) {

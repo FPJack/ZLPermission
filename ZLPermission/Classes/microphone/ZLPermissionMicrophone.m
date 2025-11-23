@@ -45,7 +45,7 @@
     return self.getPermissionStatus == ZLMicrophoneAuthorizationStatusAuthorized;
 }
 
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))failure{
     ZLMicrophoneAuthorizationStatus status = [self getPermissionStatus];
     if (status == ZLMicrophoneAuthorizationStatusNotDetermined) {

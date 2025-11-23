@@ -28,7 +28,7 @@
             return ZLSiriAuthorizationStatusDenied;
     }
 }
-- (void)requestPermissionWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
+- (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
                              failure:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))failure {
     ZLSiriAuthorizationStatus status = [self getPermissionStatus];
     if (status == ZLSiriAuthorizationStatusNotDetermined) {
