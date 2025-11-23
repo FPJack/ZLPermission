@@ -8,42 +8,50 @@
 [![Platform](https://img.shields.io/cocoapods/p/ZLPermission.svg?style=flat)](https://cocoapods.org/pods/ZLPermission)
 
 ## Example
-
-    1.以相机为例只返回成功失败结果
-    [ZLPermission.camera requestPermissionWithSuccess:^{
-            
-    } failure:^{
-            
-    }];
+    ###以相机为例，其他权限申请一致
+    
+    1.只返回成功失败结果
+        [ZLPermission.camera requestPermissionWithSuccess:^{
+                
+        } failure:^{
+                
+        }];
     
     2.失败返回失败状态码
-    [ZLPermission.camera requestPermissionWithSuccess:^{
-        
-    } failureWithStatus:^(ZLAuthorizationStatus status) {
-        
-    }];
+        [ZLPermission.camera requestPermissionWithSuccess:^{
+            
+        } failureWithStatus:^(ZLAuthorizationStatus status) {
+            
+        }];
     
     3.成功失败返回都返回状态码
-    [ZLPermission.camera requestPermissionOnlyStatusWithSuccess:^(ZLAuthorizationStatus status) {
-        
-    } failure:^(ZLAuthorizationStatus status) {
-        
-    }];
+        [ZLPermission.camera requestPermissionOnlyStatusWithSuccess:^(ZLAuthorizationStatus status) {
+            
+        } failure:^(ZLAuthorizationStatus status) {
+            
+        }];
     
     4.成功失败返回都返回状态码以及返回是否是初次申请
-    [ZLPermission.camera requestPermissionStatusWithSuccess:^(BOOL isFirst, ZLAuthorizationStatus status) {
-        
-    } failure:^(BOOL isFirst, ZLAuthorizationStatus status) {
-        
-    }];
+        [ZLPermission.camera requestPermissionStatusWithSuccess:^(BOOL isFirst, ZLAuthorizationStatus status) {
+            
+        } failure:^(BOOL isFirst, ZLAuthorizationStatus status) {
+            
+        }];
     
     5.成功失败返回都返回状态码以及返回是否是初次申请，失败还返回申请权限类型方便统一做失败结果处理
-    [ZLPermission.camera requestPermissionStatusWithSuccess:^(BOOL isFirst, ZLAuthorizationStatus status) {
-        
-    } failureWithType:^(BOOL isFirst, NSInteger status, ZLPermissionType type) {
-        
-    }];
+        [ZLPermission.camera requestPermissionStatusWithSuccess:^(BOOL isFirst, ZLAuthorizationStatus status) {
+            
+        } failureWithType:^(BOOL isFirst, NSInteger status, ZLPermissionType type) {
+            
+        }];
     
+    6.获取相对应的权限状态码
+        [ZLPermission.camera getPermissionStatus];
+    
+    7.直接获取是否已授权
+        [ZLPermission.camera hasPermission];
+
+
     
 
 ## Requirements
