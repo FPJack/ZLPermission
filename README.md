@@ -8,7 +8,8 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
 
 ## 例子
     以相机为例，其他权限申请一致,申请权限时确保plistInfo里面已添加了相对应的权限申请说明,siri权限申请需要付费开发者账号开通
-    
+``objc
+
     1.只返回成功失败结果
     
         [ZLPermission.camera requestPermissionWithSuccess:^{
@@ -58,6 +59,9 @@ iOS快捷方便的权限申请库，支持常用的15种权限申请，方法调
         [ZLPermission.camera hasPermission];
 
     8.差别权限申请查看相对应的API方法,例如（相册，蓝牙，定位，健康...）
+```
+
+    
 
     
 
@@ -70,11 +74,9 @@ cocoapods 导入
 ```ruby
 
   一次性倒入
-  
   pod 'ZLPermission'
   
   按需导入
-  
   pod 'ZLPermission/camera'
   pod 'ZLPermission/photo'
   pod 'ZLPermission/location'
