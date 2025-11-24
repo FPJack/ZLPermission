@@ -71,6 +71,7 @@ typedef NS_ENUM(NSInteger,ZLPermissionType)
 
     ZLPermissionTypeMotion = 140,
 #endif
+    ZLPermissionTypeUnkown = 999,
 };
 
 

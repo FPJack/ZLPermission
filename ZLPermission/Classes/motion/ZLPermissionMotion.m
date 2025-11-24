@@ -33,7 +33,7 @@
 }
 - (BOOL)hasPermission {
     if (@available(iOS 11.0, *)) {
-        return self.getPermissionStatus == ZLSiriAuthorizationStatusAuthorized;
+        return self.getPermissionStatus == ZLMotionAuthorizationStatusAuthorized;
     } else {
         return NO;
     }

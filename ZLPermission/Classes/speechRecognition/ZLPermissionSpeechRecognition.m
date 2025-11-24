@@ -9,7 +9,7 @@
 #import <Speech/Speech.h>
 @implementation ZLPermissionSpeechRecognition
 - (BOOL)hasPermission {
-    return self.getPermissionStatus == ZLSiriAuthorizationStatusAuthorized;
+    return self.getPermissionStatus == ZLSpeechRecognizerAuthorizationStatusAuthorized;
 }
 - (ZLSpeechRecognizerAuthorizationStatus)getPermissionStatus {
     return [self parseStatus:[SFSpeechRecognizer authorizationStatus]];
