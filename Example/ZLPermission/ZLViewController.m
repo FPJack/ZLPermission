@@ -200,22 +200,27 @@
         }
         case ZLPermissionTypeHealth:
         {
-            if (ZLPermission.reminders.getPermissionStatus == ZLEventAuthorizationStatusNotDetermined) {
+            
+            HKQuantityTypeIdentifier distance = HKQuantityTypeIdentifierDistanceWalkingRunning;
+            ZLHealthAuthorizationStatus status = [ZLPermission.health getPermissionStatusWithHKObjectType:distance];
+            if (status == ZLHealthAuthorizationStatusNotDetermined) {
                 buttonType  = ZLButtonTypeNotDetermined;
             }else {
-                buttonType = ZLPermission.reminders.hasPermission ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
+                buttonType = status == ZLHealthAuthorizationStatusAuthorized ? ZLButtonTypeAuthorized : ZLButtonTypeDenied;
             }
             cell.requestPermission = ^{
-                [ZLPermission.reminders requestPermissionWithSuccess:^{
-                    [tableView reloadData];
-                } failure:^{
-                    [tableView reloadData];
+                [ZLPermission.health requestPermissionWithWriteTypes:@[distance] readTypes:@[distance] success:^(NSArray<ZLHKRes *> * _Nonnull results) {
+                    [self.tableView reloadData];
+                } failure:^(NSArray<ZLHKRes *> * _Nonnull results) {
+                    [self.tableView reloadData];
                 }];
+    
             };
             break;
         }
         case ZLPermissionTypeContacts:
         {
+            
             if (ZLPermission.contacts.getPermissionStatus == ZLContactsAuthorizationStatusNotDetermined) {
                 buttonType  = ZLButtonTypeNotDetermined;
             }else {

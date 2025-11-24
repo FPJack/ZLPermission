@@ -11,7 +11,11 @@
 @implementation ZLPermissionContacts
 - (BOOL)hasPermission {
     ZLContactsAuthorizationStatus status = self.getPermissionStatus;
-    return status == ZLContactsAuthorizationStatusAuthorized || status == ZLContactsAuthorizationStatusLimited;
+    if (@available(iOS 18.0, *)) {
+        return status == ZLContactsAuthorizationStatusAuthorized || status == ZLContactsAuthorizationStatusLimited;
+    } else {
+        return status == ZLContactsAuthorizationStatusAuthorized;
+    }
 }
 
 - (ZLContactsAuthorizationStatus)parseStatus:(CNAuthorizationStatus)status {
@@ -24,8 +28,12 @@
             return ZLContactsAuthorizationStatusDenied;
         case CNAuthorizationStatusAuthorized:
             return ZLContactsAuthorizationStatusAuthorized;
-//        case CNAuthorizationStatusLimited:
-//            return ZLContactsAuthorizationStatusLimited;
+        case CNAuthorizationStatusLimited:
+            if (@available(iOS 18.0, *)) {
+                return ZLContactsAuthorizationStatusLimited;
+            } else {
+                return ZLContactsAuthorizationStatusAuthorized;
+            }
         default:
             return ZLContactsAuthorizationStatusDenied;
     }

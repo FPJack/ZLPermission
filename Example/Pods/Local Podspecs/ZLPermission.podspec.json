@@ -36,7 +36,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/camera/**/*",
-      "weak_frameworks": "AVFoundation"
+      "weak_frameworks": "AVFoundation",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestCameraEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestCameraEnabled"
+      }
     },
     {
       "name": "photo",
@@ -46,7 +52,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/photo/**/*",
-      "weak_frameworks": "Photos"
+      "weak_frameworks": "Photos",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestPhotosEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestPhotosEnabled"
+      }
     },
     {
       "name": "microphone",
@@ -56,7 +68,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/microphone/**/*",
-      "weak_frameworks": "AVFoundation"
+      "weak_frameworks": "AVFoundation",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestMicrophoneEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestMicrophoneEnabled"
+      }
     },
     {
       "name": "location",
@@ -66,7 +84,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/location/**/*",
-      "weak_frameworks": "CoreLocation"
+      "weak_frameworks": "CoreLocation",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestLocationEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestLocationEnabled"
+      }
     },
     {
       "name": "bluetooth",
@@ -76,7 +100,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/bluetooth/**/*",
-      "weak_frameworks": "CoreBluetooth"
+      "weak_frameworks": "CoreBluetooth",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestBluetoothEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestBluetoothEnabled"
+      }
     },
     {
       "name": "calendar",
@@ -86,7 +116,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/calendar/**/*",
-      "weak_frameworks": "EventKit"
+      "weak_frameworks": "EventKit",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestCalendarEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestCalendarEnabled"
+      }
     },
     {
       "name": "reminders",
@@ -96,7 +132,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/reminders/**/*",
-      "weak_frameworks": "EventKit"
+      "weak_frameworks": "EventKit",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestRemindersEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestRemindersEnabled"
+      }
     },
     {
       "name": "tracking",
@@ -105,7 +147,13 @@
 
         ]
       },
-      "source_files": "ZLPermission/Classes/tracking/**/*"
+      "source_files": "ZLPermission/Classes/tracking/**/*",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestTrackingEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestTrackingEnabled"
+      }
     },
     {
       "name": "mediaLibrary",
@@ -115,7 +163,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/mediaLibrary/**/*",
-      "weak_frameworks": "MediaPlayer"
+      "weak_frameworks": "MediaPlayer",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestMediaLibraryEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestMediaLibraryEnabled"
+      }
     },
     {
       "name": "notification",
@@ -128,7 +182,13 @@
       "weak_frameworks": [
         "UIKit",
         "UserNotifications"
-      ]
+      ],
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestNotificationEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestNotificationEnabled"
+      }
     },
     {
       "name": "health",
@@ -138,7 +198,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/health/**/*",
-      "weak_frameworks": "HealthKit"
+      "weak_frameworks": "HealthKit",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestHealthEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestHealthEnabled"
+      }
     },
     {
       "name": "contacts",
@@ -148,7 +214,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/contacts/**/*",
-      "weak_frameworks": "Accounts"
+      "weak_frameworks": "Accounts",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestContactsEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestContactsEnabled"
+      }
     },
     {
       "name": "siri",
@@ -158,7 +230,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/siri/**/*",
-      "weak_frameworks": "Intents"
+      "weak_frameworks": "Intents",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestSiriEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestSiriEnabled"
+      }
     },
     {
       "name": "speechRecognition",
@@ -168,7 +246,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/speechRecognition/**/*",
-      "weak_frameworks": "Speech"
+      "weak_frameworks": "Speech",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestSpeechEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestSpeechEnabled"
+      }
     },
     {
       "name": "motion",
@@ -178,7 +262,13 @@
         ]
       },
       "source_files": "ZLPermission/Classes/motion/**/*",
-      "weak_frameworks": "CoreMotion"
+      "weak_frameworks": "CoreMotion",
+      "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestMotionEnabled"
+      },
+      "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "ZLPermissionRequestMotionEnabled"
+      }
     }
   ]
 }

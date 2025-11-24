@@ -17,21 +17,60 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger,ZLPermissionType)
 {
+#ifdef ZLPermissionRequestLocationEnabled
     ZLPermissionTypeLocation = 0,
-    ZLPermissionTypePhoto,
-    ZLPermissionTypeCamera,
-    ZLPermissionTypeMicrophone,
-    ZLPermissionTypeNotification,
-    ZLPermissionTypeBluetooth,
-    ZLPermissionTypeMediaLibrary,
-    ZLPermissionTypeCalendar,
-    ZLPermissionTypeReminders,
-    ZLPermissionTypeHealth,
-    ZLPermissionTypeContacts,
-    ZLPermissionTypeTracking,
-    ZLPermissionTypeSiri,
-    ZLPermissionTypeSpeechRecognizer,
-    ZLPermissionTypeMotion,
+#endif
+#ifdef ZLPermissionRequestPhotosEnabled
+    ZLPermissionTypePhoto = 10,
+#endif
+#ifdef ZLPermissionRequestCameraEnabled
+    ZLPermissionTypeCamera = 20,
+#endif
+#ifdef ZLPermissionRequestMicrophoneEnabled
+    ZLPermissionTypeMicrophone = 30,
+#endif
+#ifdef ZLPermissionRequestNotificationEnabled
+
+    ZLPermissionTypeNotification = 40,
+#endif
+#ifdef ZLPermissionRequestBluetoothEnabled
+    ZLPermissionTypeBluetooth = 50,
+#endif
+#ifdef ZLPermissionRequestMediaLibraryEnabled
+
+    ZLPermissionTypeMediaLibrary = 60,
+#endif
+#ifdef ZLPermissionRequestCalendarEnabled
+    ZLPermissionTypeCalendar = 70,
+#endif
+#ifdef ZLPermissionRequestRemindersEnabled
+
+    ZLPermissionTypeReminders = 80,
+#endif
+#ifdef ZLPermissionRequestHealthEnabled
+
+    ZLPermissionTypeHealth = 90,
+#endif
+#ifdef ZLPermissionRequestContactsEnabled
+
+    ZLPermissionTypeContacts = 100,
+#endif
+#ifdef ZLPermissionRequestTrackingEnabled
+
+    ZLPermissionTypeTracking = 110,
+#endif
+#ifdef ZLPermissionRequestSiriEnabled
+
+    ZLPermissionTypeSiri = 120,
+#endif
+#ifdef ZLPermissionRequestSpeechEnabled
+
+    ZLPermissionTypeSpeechRecognizer = 130,
+#endif
+#ifdef ZLPermissionRequestMotionEnabled
+
+    ZLPermissionTypeMotion = 140,
+#endif
 };
 
 
@@ -43,6 +82,7 @@ typedef NS_ENUM(NSInteger,ZLAuthorizationStatus)
     ZLAuthorizationStatusAuthorized
 };
 
+#ifdef ZLPermissionRequestPhotosEnabled
 typedef NS_ENUM(NSInteger,ZLPhotoAuthorizationStatus)
 {
     ZLPhotoAuthorizationStatusNotDetermined = 0,
@@ -51,15 +91,18 @@ typedef NS_ENUM(NSInteger,ZLPhotoAuthorizationStatus)
     ZLPhotoAuthorizationStatusAuthorized,
     ZLPhotoAuthorizationStatusLimited
 };
+#endif
 
+#ifdef ZLPermissionRequestMicrophoneEnabled
 typedef NS_ENUM(NSInteger,ZLMicrophoneAuthorizationStatus)
 {
     ZLMicrophoneAuthorizationStatusNotDetermined = 0,
     ZLMicrophoneAuthorizationStatusDenied,
     ZLMicrophoneAuthorizationStatusAuthorized
 };
+#endif
 
-
+#ifdef ZLPermissionRequestLocationEnabled
 typedef NS_ENUM(NSInteger,ZLLocationAuthorizationStatus)
 {
     ZLLocationAuthorizationStatusNotDetermined = 0,
@@ -68,6 +111,9 @@ typedef NS_ENUM(NSInteger,ZLLocationAuthorizationStatus)
     ZLLocationAuthorizationStatusAlways ,
     ZLLocationAuthorizationStatusWhenInUse,
 };
+#endif
+
+#ifdef ZLPermissionRequestHealthEnabled
 
 typedef NS_ENUM(NSInteger,ZLHealthAuthorizationStatus)
 {
@@ -75,7 +121,8 @@ typedef NS_ENUM(NSInteger,ZLHealthAuthorizationStatus)
     ZLHealthAuthorizationStatusDenied ,
     ZLHealthAuthorizationStatusAuthorized ,
 };
-
+#endif
+#ifdef ZLPermissionRequestBluetoothEnabled
 ///蓝牙
 typedef NS_OPTIONS(NSInteger, ZLBluetoothCapabilities) {
     ZLBluetoothCapabilityNotDetermined          = 0, /// 未决定
@@ -89,16 +136,23 @@ typedef NS_OPTIONS(NSInteger, ZLBluetoothCapabilities) {
     ZLBluetoothCapabilityPoweredOff    = 1 << 7,/// 系统已关闭
     ZLBluetoothCapabilityPoweredOn    = 1 << 8,/// 系统已开启
 };
+#endif
+
+
+#if defined(ZLPermissionRequestCalendarEnabled) || defined(ZLPermissionRequestRemindersEnabled)
 
 //日历和提醒事件
-typedef NS_ENUM(NSInteger,ZLEventAuthorizationStatus)
-{
+typedef NS_ENUM(NSInteger, ZLEventAuthorizationStatus) {
     ZLEventAuthorizationStatusNotDetermined = 0,
     ZLEventAuthorizationStatusRestricted,
     ZLEventAuthorizationStatusDenied,
     ZLEventAuthorizationStatusFullAccess,
     ZLEventAuthorizationStatusWriteOnly
 };
+
+#endif
+
+#ifdef ZLPermissionRequestNotificationEnabled
 
 typedef NS_ENUM(NSInteger,ZLNotificationAuthorizationStatus)
 {
@@ -108,6 +162,9 @@ typedef NS_ENUM(NSInteger,ZLNotificationAuthorizationStatus)
     ZLNotificationAuthorizationStatusProvisional,
     ZLNotificationAuthorizationStatusEphemeral
 };
+#endif
+
+#ifdef ZLPermissionRequestContactsEnabled
 
 typedef NS_ENUM(NSInteger,ZLContactsAuthorizationStatus)
 {
@@ -115,8 +172,11 @@ typedef NS_ENUM(NSInteger,ZLContactsAuthorizationStatus)
     ZLContactsAuthorizationStatusDenied,
     ZLContactsAuthorizationStatusRestricted,
     ZLContactsAuthorizationStatusAuthorized,
-    ZLContactsAuthorizationStatusLimited,
+    ZLContactsAuthorizationStatusLimited ,/// iOS 18新增
 };
+#endif
+#ifdef ZLPermissionRequestSiriEnabled
+
 typedef NS_ENUM(NSInteger,ZLSiriAuthorizationStatus)
 {
     ZLSiriAuthorizationStatusNotDetermined = 0,
@@ -124,6 +184,8 @@ typedef NS_ENUM(NSInteger,ZLSiriAuthorizationStatus)
     ZLSiriAuthorizationStatusRestricted,
     ZLSiriAuthorizationStatusAuthorized,
 };
+#endif
+#ifdef ZLPermissionRequestSpeechEnabled
 
 typedef NS_ENUM(NSInteger,ZLSpeechRecognizerAuthorizationStatus)
 {
@@ -132,6 +194,8 @@ typedef NS_ENUM(NSInteger,ZLSpeechRecognizerAuthorizationStatus)
     ZLSpeechRecognizerAuthorizationStatusRestricted,
     ZLSpeechRecognizerAuthorizationStatusAuthorized,
 };
+#endif
+#ifdef ZLPermissionRequestMotionEnabled
 
 typedef NS_ENUM(NSInteger,ZLMotionAuthorizationStatus)
 {
@@ -140,7 +204,7 @@ typedef NS_ENUM(NSInteger,ZLMotionAuthorizationStatus)
     ZLMotionAuthorizationStatusRestricted,
     ZLMotionAuthorizationStatusAuthorized,
 } API_AVAILABLE(ios(11.0));
-
+#endif
 
 typedef void(^ZLSuccessCallback)(BOOL isFirst,NSInteger status);
 typedef void(^ZLFailureCallback)(BOOL isFirst,NSInteger status);
@@ -170,8 +234,7 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
                            failureWithType:(ZLFailureTypeCallback)failure;
 @end
 
-
-
+#ifdef ZLPermissionRequestCameraEnabled
 @protocol ZLCameraPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLCameraPermissionProtocol> )share;
@@ -185,8 +248,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
+#endif
 
-
+#ifdef ZLPermissionRequestPhotosEnabled
 @protocol ZLPhotoPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLPhotoPermissionProtocol> )share;
@@ -211,9 +275,10 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestWriteOnlyPermissionWithSuccess:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))success
                                       failure:(void(^)(BOOL isFirst, ZLPhotoAuthorizationStatus status))failure;
 @end
+#endif
 
 
-
+#ifdef ZLPermissionRequestMicrophoneEnabled
 @protocol ZLMicrophonePermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLMicrophonePermissionProtocol> )share;
@@ -227,8 +292,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMicrophoneAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
+#endif
 
-
+#ifdef ZLPermissionRequestLocationEnabled
 @protocol ZLLocationPermissionProtocol <ZLPermissionProtocol>
 @required
 - (BOOL)systemLocationServicesEnabled;
@@ -242,8 +308,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst, ZLLocationAuthorizationStatus status,ZLPermissionType type))failure;
 @end
+#endif
 
-
+#ifdef ZLPermissionRequestBluetoothEnabled
 @protocol ZLBluetoothPermissionProtocol <ZLPermissionProtocol>
 @required
 
@@ -264,8 +331,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLBluetoothCapabilities status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
+#endif
 
-
+#ifdef ZLPermissionRequestCalendarEnabled
 @protocol ZLEventPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLEventPermissionProtocol> )share;
@@ -285,6 +353,10 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure;
 @end
+#endif
+
+
+#ifdef ZLPermissionRequestRemindersEnabled
 
 @protocol ZLRemindersPermissionProtocol <ZLPermissionProtocol>
 @required
@@ -301,9 +373,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst, ZLEventAuthorizationStatus status,ZLPermissionType type))failure;
 @end
+#endif
 
-
-
+#ifdef ZLPermissionRequestTrackingEnabled
 @protocol ZLTrackingPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLTrackingPermissionProtocol> )share;
@@ -318,7 +390,8 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
-
+#endif
+#ifdef ZLPermissionRequestMediaLibraryEnabled
 @protocol ZLMediaLibraryPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLMediaLibraryPermissionProtocol> )share;
@@ -332,8 +405,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
-#ifdef ZLPermissionRequestHealthEnabled
+#endif
 
+#ifdef ZLPermissionRequestHealthEnabled
 @protocol ZLHealthPermissionProtocol <NSObject>
 @required
 + (id<ZLHealthPermissionProtocol>)share;
@@ -341,12 +415,12 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (ZLHealthAuthorizationStatus)getPermissionStatusWithHKObjectType:(HKQuantityTypeIdentifier)quantityTypeIdentifier;
 - (void)requestPermissionWithWriteTypes:(NSArray<HKQuantityTypeIdentifier > *)writeTypes
                               readTypes:(NSArray<HKQuantityTypeIdentifier > *)readTypesadTypes
-                                success:(void(^)(NSArray<ZLHKRes *> *))success
-                                failure:(void(^)(NSArray<ZLHKRes *> *))failure;
+                                success:(void(^)(NSArray<ZLHKRes *> * results))success
+                                failure:(void(^)(NSArray<ZLHKRes *> * results))failure;
 @end
-
 #endif
 
+#ifdef ZLPermissionRequestNotificationEnabled
 @protocol ZLNotificationPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLNotificationPermissionProtocol> )share;
@@ -360,7 +434,8 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLNotificationAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
-
+#endif
+#ifdef ZLPermissionRequestContactsEnabled
 @protocol ZLContactsPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLContactsPermissionProtocol> )share;
@@ -374,8 +449,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLContactsAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
+#endif
 
-
+#ifdef ZLPermissionRequestSiriEnabled
 @protocol ZLSiriPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLSiriPermissionProtocol> )share;
@@ -390,8 +466,9 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSiriAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
+#endif
 
-
+#ifdef ZLPermissionRequestSpeechEnabled
 @protocol ZLSpeechRecognizerPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLSpeechRecognizerPermissionProtocol> )share;
@@ -405,8 +482,8 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLSpeechRecognizerAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure;
 @end
-
-
+#endif
+#ifdef ZLPermissionRequestMotionEnabled
 @protocol ZLMotionPermissionProtocol <ZLPermissionProtocol>
 @required
 + (id<ZLMotionPermissionProtocol> )share;
@@ -421,5 +498,5 @@ typedef void(^ZLFailureTypeCallback)(BOOL isFirstRequest,NSInteger status,ZLPerm
 - (void)requestPermissionStatusWithSuccess:(void(^)(BOOL isFirst, ZLMotionAuthorizationStatus status))success
                            failureWithType:(void(^)(BOOL isFirst,NSInteger status,ZLPermissionType type))failure  API_AVAILABLE(ios(11.0));
 @end
-
+#endif
 NS_ASSUME_NONNULL_END

@@ -14,25 +14,58 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface ZLPermission : NSObject
+#ifdef ZLPermissionRequestCameraEnabled
 + (id<ZLCameraPermissionProtocol>)camera;
+#endif
+#ifdef ZLPermissionRequestPhotosEnabled
 + (id<ZLPhotoPermissionProtocol>)photo;
+#endif
+#ifdef ZLPermissionRequestMicrophoneEnabled
 + (id<ZLMicrophonePermissionProtocol>)microphone;
+#endif
+#ifdef ZLPermissionRequestLocationEnabled
 + (id<ZLLocationPermissionProtocol>)location;
+#endif
+#ifdef ZLPermissionRequestBluetoothEnabled
 + (id<ZLBluetoothPermissionProtocol>)bluetooth;
+#endif
+#ifdef ZLPermissionRequestCalendarEnabled
 + (id<ZLEventPermissionProtocol>)calendar;
+#endif
+#ifdef ZLPermissionRequestRemindersEnabled
 + (id<ZLRemindersPermissionProtocol>)reminders;
+#endif
+#ifdef ZLPermissionRequestTrackingEnabled
 + (id<ZLTrackingPermissionProtocol>)tracking;
+#endif
+#ifdef ZLPermissionRequestMediaLibraryEnabled
+
 + (id<ZLMediaLibraryPermissionProtocol>)mediaLibrary;
+#endif
 #ifdef ZLPermissionRequestHealthEnabled
 + (id<ZLHealthPermissionProtocol>)health;
 #endif
 
-+ (id<ZLNotificationPermissionProtocol>)notification;
-+ (id<ZLContactsPermissionProtocol>)contacts;
-+ (id<ZLSiriPermissionProtocol>)siri;
-+ (id<ZLSpeechRecognizerPermissionProtocol>)speechRecognizer;
-+ (id<ZLMotionPermissionProtocol>)motion API_AVAILABLE(ios(11.0));
+#ifdef ZLPermissionRequestNotificationEnabled
 
++ (id<ZLNotificationPermissionProtocol>)notification;
+#endif
+#ifdef ZLPermissionRequestContactsEnabled
+
++ (id<ZLContactsPermissionProtocol>)contacts;
+#endif
+#ifdef ZLPermissionRequestSiriEnabled
+
++ (id<ZLSiriPermissionProtocol>)siri;
+#endif
+#ifdef ZLPermissionRequestSpeechEnabled
+
++ (id<ZLSpeechRecognizerPermissionProtocol>)speechRecognizer;
+#endif
+#ifdef ZLPermissionRequestMotionEnabled
+
++ (id<ZLMotionPermissionProtocol>)motion API_AVAILABLE(ios(11.0));
+#endif
 /// 跳转去设置界面开启权限
 + (void)goToAppSystemSetting;
 /// 弹出提示框，提示用户去设置界面开启权限

@@ -1,7 +1,7 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks" "${PODS_CONFIGURATION_BUILD_DIR}/FBSnapshotTestCase" "${PODS_CONFIGURATION_BUILD_DIR}/ZLPermission"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ZLPermissionRequestBluetoothEnabled ZLPermissionRequestCalendarEnabled ZLPermissionRequestCameraEnabled ZLPermissionRequestContactsEnabled ZLPermissionRequestHealthEnabled ZLPermissionRequestLocationEnabled ZLPermissionRequestMediaLibraryEnabled ZLPermissionRequestMicrophoneEnabled ZLPermissionRequestMotionEnabled ZLPermissionRequestNotificationEnabled ZLPermissionRequestPhotosEnabled ZLPermissionRequestRemindersEnabled ZLPermissionRequestSiriEnabled ZLPermissionRequestSpeechEnabled ZLPermissionRequestTrackingEnabled
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ZLPermission/ZLPermission.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift "$(PLATFORM_DIR)/Developer/Library/Frameworks" '@executable_path/Frameworks' '@loader_path/Frameworks'
 LIBRARY_SEARCH_PATHS = $(inherited) "${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift

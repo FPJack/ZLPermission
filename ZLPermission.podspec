@@ -39,51 +39,81 @@ TODO: Add long description of the pod here.
      core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/camera/**/*'
      core.weak_framework       = 'AVFoundation'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestCameraEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'photo' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/photo/**/*'
      core.weak_framework       = 'Photos'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestPhotosEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'microphone' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/microphone/**/*'
      core.weak_framework       = 'AVFoundation'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestMicrophoneEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'location' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/location/**/*'
      core.weak_framework       = 'CoreLocation'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestLocationEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'bluetooth' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/bluetooth/**/*'
      core.weak_framework       = 'CoreBluetooth'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestBluetoothEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'calendar' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/calendar/**/*'
      core.weak_framework       = 'EventKit'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestCalendarEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'reminders' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/reminders/**/*'
      core.weak_framework       = 'EventKit'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestRemindersEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'tracking' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/tracking/**/*'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestTrackingEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'mediaLibrary' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/mediaLibrary/**/*'
      core.weak_framework       = 'MediaPlayer'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestMediaLibraryEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
 
   s.subspec 'notification' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/notification/**/*'
      core.weak_framework       = 'UIKit', 'UserNotifications'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestNotificationEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'health' do |core|
     core.dependency 'ZLPermission/base'
@@ -97,21 +127,33 @@ TODO: Add long description of the pod here.
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/contacts/**/*'
      core.weak_framework       = 'Accounts'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestContactsEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'siri' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/siri/**/*'
      core.weak_framework       = 'Intents'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestSiriEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'speechRecognition' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/speechRecognition/**/*'
      core.weak_framework       = 'Speech'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestSpeechEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   s.subspec 'motion' do |core|
     core.dependency 'ZLPermission/base'
      core.source_files = 'ZLPermission/Classes/motion/**/*'
      core.weak_framework       = 'CoreMotion'
+     feature_flags               = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ZLPermissionRequestMotionEnabled' }
+     core.pod_target_xcconfig  = feature_flags
+     core.user_target_xcconfig = feature_flags
    end
   
   # s.resource_bundles = {
