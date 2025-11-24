@@ -46,7 +46,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellId = [NSString stringWithFormat:@"%ld",indexPath.row];
     ZLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    ZLPermissionType type = indexPath.row;
+    ZLPermissionType type = indexPath.row * 10;
     NSString *title = [self permissionName:type];
     cell.titleLab.text = title;
     ZLButtonType buttonType;

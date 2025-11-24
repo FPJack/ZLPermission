@@ -71,7 +71,9 @@ static NSDictionary *permissionClassMap;
 
             @"ZLPermissionMediaLibrary": @(ZLPermissionTypeMediaLibrary),
 #endif
+#ifdef ZLPermissionRequestHealthEnabled
             @"ZLPermissionHealth": @(ZLPermissionTypeHealth),
+#endif
 #ifdef ZLPermissionRequestNotificationEnabled
 
             @"ZLPermissionNotification": @(ZLPermissionTypeNotification),
