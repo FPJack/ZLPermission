@@ -110,7 +110,7 @@
 }
 
 - (BOOL)hasReadWritePermission { 
-    return self.getPermissionStatus == ZLAuthorizationStatusAuthorized || self.getPermissionStatus == ZLPhotoAuthorizationStatusLimited;
+    return self.getPermissionStatus == ZLPhotoAuthorizationStatusAuthorized || self.getPermissionStatus == ZLPhotoAuthorizationStatusLimited;
 }
 
 - (BOOL)hasWritePermission { 
